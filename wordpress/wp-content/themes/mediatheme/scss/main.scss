@@ -1,1 +1,5 @@
-// Styles go here
+// Base styles, layout and variables
+@import "01-base/variables";
+@import "~normalize.css/normalize.css";
+@import "01-base/layout";
+
