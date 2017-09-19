@@ -1,0 +1,21 @@
+{
+  "name": "mediatheme",
+  "version": "1.0.0",
+  "description": "A WordPress theme for TAMK's new Mediapolis blog",
+  "main": "index.js",
+  "repository": "git@github.com:tmskrtsz/mediatheme.git",
+  "author": "<tamas.kertesz@cult.tamk.fi>",
+  "license": "MIT",
+  "dependencies": {
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "node-sass": "^4.5.3",
+    "postcss-flexbugs-fixes": "^3.2.0",
+    "postcss-loader": "^2.0.6",
+    "sass-loader": "^6.0.6",
+    "webpack": "^3.6.0"
+  },
+  "scripts": {
+    "watch": "webpack --watch"
+  }
+}
