@@ -1,6 +1,22 @@
 // Brand colors
 $white: #ffffff;
+$brand-primary: #48C6E2;
+$brand-dark: #333333;
+$bg-color: #FAFBFD;
+$border-color: rgba($brand-dark, 0.12);
+$text-color: rgba($brand-dark, 0.7);
 
 // Typography and font-size
+$font-primary: 'Nunito', sans-serif;
+$font-secondary: 'Crimson Text', serif;
 $font-size-base: 1.4rem;
-$line-height-base: 1.857;
+$line-height-base: 1.5;
+$line-height-sm: $line-height-base;
+$line-height-md: $line-height-base + $line-height-base / 10;
+$line-height-lg: $line-height-base + $line-height-base / 5;
+$letter-spacing-sm: 0.3px;
+$letter-spacing-md: 0.6px;
+$letter-spacing-lg: 0.9px;
+
+// Sizing 
+$container-width: 128rem;

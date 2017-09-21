@@ -1,8 +1,72 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 html {
     font-size: 62.5%;
 }
 
 body {
-    background-color: $white;
+    background-color: $bg-color;
+    font-family: $font-primary;
     font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $text-color;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    color: $brand-dark;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: $container-width;
+    margin: 0 auto;
+}
+
+.container-inner {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -40px 0 0 -40px;
+
+    .col {
+        margin-left: 40px;
+        margin-top: 40px;
+        width: calc(100% * (1/3) - 40px)
+    }
+}
+
+.btn {
+    font-size: 1.4rem;
+    letter-spacing: $letter-spacing-sm;
+    display: inline-block;
+    padding: 0.6em 1.4em;
+    border-radius: 20px;
+    transition: all 0.15s ease-in-out;
+}
+
+.btn-primary {
+    @extend .btn;
+    background-color: rgba($brand-primary, 0.1);
+    color: $brand-primary;
+
+    &:hover {
+        background-color: $brand-primary;
+        color: $white;
+    }
+}
+
+.content-title {
+    padding: 3em 0;
 }
