@@ -114,6 +114,24 @@ function mediatheme_widgets_init() {
 add_action( 'widgets_init', 'mediatheme_widgets_init' );
 
 /**
+ * Custom scripts
+ */
+ function remove_page_class($wp_list_pages) {
+	$pattern = '/\<li class="page_item[^>]*>/';
+	$replace_with = '<li>';
+	return preg_replace($pattern, $replace_with, $wp_list_pages);
+}
+add_filter('wp_list_pages', 'remove_page_class');
+
+function wpdocs_theme_setup() {
+    add_image_size( 'custom-image-thumb', 368, 222, true );
+}
+add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
+
+function get_limited_excerpt($limit) {
+	return wp_trim_words(get_the_excerpt(), $limit, '');
+}
+/**
  * Enqueue scripts and styles.
  */
 function mediatheme_scripts() {

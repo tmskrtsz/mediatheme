@@ -1,0 +1,110 @@
+.post {
+    background-color: $white;
+    border-radius: 6px;
+    border: 1px solid darken($bg-color, 4%);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-thumbnail {
+        background-color: $white;
+        padding: 15px;
+        max-height: 222px;
+        z-index: 50;
+        box-sizing: content-box;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            width: 100%;
+            border-radius: 3px;
+        }
+
+        &::before {
+            content: "→";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: $white;
+            font-size: 2rem;
+            opacity: 0;
+            transition: all 0.15s ease-in-out;
+            z-index: 100;
+        }
+
+        &::after {
+            content: "";
+            background-color: rgba(#000, 0.7);
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            bottom: 15px;
+            left: 15px;
+            border-radius: 3px;
+            opacity: 0;
+            transition: all 0.15s ease-in-out;
+            z-index: 50;
+        }
+    }
+
+    &-meta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        position: relative;
+        z-index: 100;
+        transition: all 0.15s ease-in-out;
+
+        .post-title {
+            font-size: 2rem;
+
+            a {
+                color: $brand-dark;
+            }
+        }
+
+        p {
+            font-size: 1.6rem;
+            margin: 1em 0;
+            line-height: $line-height-lg;
+        }
+    }
+
+    &-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+        border-top: 1px solid $border-color;
+
+        img.avatar {
+            border-radius: 100px;
+        }
+    }
+
+    &-author {
+        display: flex;
+        align-items: center;
+
+        span {
+            margin: 0 0.8em;
+        }
+    }
+
+    &:hover {
+        & > .post-thumbnail {
+            &::after,
+            &::before {
+                opacity: 1;
+            }
+        }
+        & > .post-meta .btn-primary {
+            background-color: $brand-primary;
+            color: $white;
+        }
+    }
+}

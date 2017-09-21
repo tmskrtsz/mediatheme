@@ -1,0 +1,26 @@
+.main-navigation {
+    background-color: $white;
+    border-bottom: 1px solid $border-color;
+    max-height: 7rem;
+
+    .menu {
+        display: flex;
+    }
+
+    ul {
+        display: flex;
+
+        li {
+            list-style: none;
+        }
+        
+        li a {
+            display: inline-block;
+            margin: 0.7em;
+            padding: 0.7em;
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: #6f6f6f;
+        }
+    }
+}

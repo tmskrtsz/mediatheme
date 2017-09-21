@@ -1,54 +1,31 @@
-<?php
-/**
- * Template part for displaying posts
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package Mediatheme
- */
+<article class="col post">
+	<?php if ( has_post_thumbnail() ): ?>
+		<a class="post-thumbnail" href="<?php echo esc_url( get_permalink($post->ID) ) ?>">
+			<?php the_post_thumbnail('custom-image-thumb'); ?>
+		</a>
+	<?php endif; ?>
+	<div class="post-meta">
+		<?php the_title( '<h2 class="post-title"><a href="' . 
+			  esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+		<p>
+			<?php 
+				if ( has_post_thumbnail() ) {
+					echo get_limited_excerpt(12);
+				 }
 
-?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php mediatheme_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
-
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'mediatheme' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			) );
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'mediatheme' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php mediatheme_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+				 else {
+					 echo get_limited_excerpt(55);
+				 }
+			?>
+		</p>
+	</div>
+	<div class="post-info">
+		<div class="post-author">
+		<?php echo get_avatar( get_the_author_meta( 'ID' ), 38 ); ?>
+		<span><?php echo get_the_author(); ?></span>
+		</div>
+		<a class="btn btn-primary btn-block" 
+		href="<?php echo esc_url( get_permalink($post->ID) ) ?>">
+		<?php echo __('Read more', 'mediatheme') ?></a>
+	</div>
+</article>

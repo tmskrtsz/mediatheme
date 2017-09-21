@@ -1,5 +1,10 @@
+// External css packages 
+@import "~normalize.css/normalize.css";
+
 // Base styles, layout and variables
 @import "01-base/variables";
-@import "~normalize.css/normalize.css";
 @import "01-base/layout";
 
+// Partials and components
+@import "02-partials/nav";
+@import "02-partials/post";
