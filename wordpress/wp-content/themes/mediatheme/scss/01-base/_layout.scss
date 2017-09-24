@@ -30,34 +30,58 @@ img {
     height: auto;
 }
 
-.container {
-    width: $container-width;
-    margin: 0 auto;
+figure {
+    margin: 0;
 }
 
-.container-inner {
-    display: flex;
-    flex-wrap: wrap;
-    margin: -40px 0 0 -40px;
+.container {
 
-    .col {
-        margin-left: 40px;
-        margin-top: 40px;
-        width: calc(100% * (1/3) - 40px)
+    &-1280,
+    &-740,
+    &-640 {
+        margin: 0 auto;
     }
+
+    &-1280 {
+        width: $container-1280;
+    }
+
+    &-740 {
+        width: $container-740;
+    }
+
+    &-640 {
+        width: $container-640;
+    }
+
+    &-100 {
+        width: 100%;
+    }
+}
+
+// Container helper classes
+.bg-white {
+    background-color: $white;
+    padding: 2em 0;
 }
 
 .btn {
     font-size: 1.4rem;
+    font-weight: 700;
     letter-spacing: $letter-spacing-sm;
     display: inline-block;
     padding: 0.6em 1.4em;
-    border-radius: 20px;
+    border: 0;
+    border-radius: 40px;
     transition: all 0.15s ease-in-out;
+    cursor: pointer;
+
+    &:active {
+        transform: scale(0.97);
+    }
 }
 
 .btn-primary {
-    @extend .btn;
     background-color: rgba($brand-primary, 0.1);
     color: $brand-primary;
 
@@ -67,6 +91,61 @@ img {
     }
 }
 
+.btn-blue {
+    background-color: $brand-primary;
+    color: $white;
+}
+
+.btn-ghost {
+    background-color: rgba($brand-dark, 0.4);
+    color: $brand-dark;
+}
+
+.btn-double {
+    color: $brand-primary;
+    border: 3px double $border-color;
+    transition: color 0.2s ease-in;
+
+    &:hover {
+        border-color: rgba($brand-primary, 0.2);
+    }
+}
+
+.btn-link {
+    color: $brand-primary;
+    font-weight: 700;
+    border-radius: 0;
+    border-bottom: 2px solid;
+    padding: 0.1em;
+    transition: color 0.1s ease-in;
+
+    &:hover {
+        color: $brand-dark;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+.btn-sm {
+    padding: 0.2em 0.8em;
+}
+
 .content-title {
     padding: 3em 0;
+
+    h1 {
+        font-size: $font-size-base * 3;
+    }
+
+    p {
+        font-family: $font-primary;
+        font-size: 1.8rem;
+        line-height: $line-height-lg;
+    }
+
+    &.text-center {
+        text-align: center;
+    }
 }

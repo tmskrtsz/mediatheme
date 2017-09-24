@@ -1,7 +1,7 @@
 
 </div><!-- #content -->
 
-<footer id="colophon" class="site-footer container">
+<footer id="colophon" class="site-footer container-1280">
 	<div class="site-info">
 		<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'mediatheme' ) ); ?>"><?php
 			/* translators: %s: CMS name, i.e. WordPress. */
