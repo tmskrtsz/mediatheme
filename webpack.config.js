@@ -45,7 +45,38 @@ module.exports = function(env) {
               { loader: "sass-loader", options: { sourceMap: true } }
             ]
           })
-        }
+        },
+        {
+          test: /\.(jpg|png|gif|svg)$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'images/[name].[ext]',
+                publicPath: './'
+              },
+            },
+            {
+              loader: 'image-webpack-loader',
+              options: {
+                gifsicle: {
+                  interlaced: false,
+                },
+                optipng: {
+                  optimizationLevel: 7,
+                },
+                pngquant: {
+                  quality: '65-90',
+                  speed: 4
+                },
+                mozjpeg: {
+                  progressive: true,
+                  quality: 65
+                },
+              },
+            }
+          ]
+        },
       ]
     },
     plugins: [

@@ -18,7 +18,7 @@
 					'menu_class'	 => 'container-1280',
 				) );
 			?>
-			<img src="assets/logo.svg" alt="Media and Art"/>
+			<div class="site-logo"></div>
 		</nav>
 	</header>
 	<div class="site-branding container-1280">

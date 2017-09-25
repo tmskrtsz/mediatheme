@@ -2,6 +2,7 @@
 	"use strict";
 
 	$(document).ready(function() {
+		
 		// Initialize comment code
 		var commentForm = $('#commentform'),
 				commentTextArea = $('textarea#comment'),
