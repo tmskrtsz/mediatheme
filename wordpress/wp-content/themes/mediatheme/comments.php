@@ -31,13 +31,13 @@ if ( post_password_required() ) {
 			if ( 1 === $comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'mediatheme' ),
+					esc_html_e( 'One comment', 'mediatheme' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'mediatheme' ) ),
+					esc_html( _nx( '%1$s comment', '%1$s comments', $comment_count, 'comments title', 'mediatheme' ) ),
 					number_format_i18n( $comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
@@ -52,6 +52,7 @@ if ( post_password_required() ) {
 				wp_list_comments( array(
 					'style'      => 'ol',
 					'short_ping' => true,
+					'avatar_size' => '42',
 				) );
 			?>
 		</ol><!-- .comment-list -->
@@ -66,7 +67,34 @@ if ( post_password_required() ) {
 
 	endif; // Check for have_comments().
 
-	comment_form();
+	comment_form(array(
+		'comment_field' => '
+			<div id="js-comment-textarea" class="input comment-form-comment">
+				<label for="comment">Comment</label>
+				<textarea id="comment" name="comment" cols="45" rows="1" maxlength="65525" aria-required="true" required="required" placeholder="'. __('Write a response...', 'mediatheme') .'"></textarea>
+			</div>
+		',
+		'fields' => array(
+				'author' => '
+					<div id="js-comment-details" class="comment-form-details">
+					<div id="js-comment-author" class="input comment-author">
+						<label for="author">Your Name</label>
+						<input id="author" name="author" type="text" placeholder="'. __('Name', 'mediatheme') .'" required="required"/>
+					</div>
+				',
+				'email' => '
+					<div id="js-comment-email" class="input comment-email">
+						<label for="email">Your Email</label>
+						<input id="email" name="email" type="text" placeholder="'. __('Email', 'mediatheme') .'" required="required"/>
+					</div>
+				',
+				'url' => '</div>',
+			),
+		'comment_notes_before' => '',
+		'class_submit' => 'btn btn-primary',
+		'logged_in_as' => '',
+		)
+	);
 	?>
 
 </div><!-- #comments -->
