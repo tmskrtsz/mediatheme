@@ -7,6 +7,11 @@
 
 // Partials and components
 @import "02-partials/nav";
+@import "02-partials/sidebar";
 @import "02-partials/gallery";
 @import "02-partials/post";
 @import "02-partials/comments";
+@import "02-partials/search";
+
+// Feather Icons
+@import "01-base/icons";

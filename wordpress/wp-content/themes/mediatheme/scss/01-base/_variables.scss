@@ -1,6 +1,3 @@
-// Feather icons
-$icon-path: "~feather-icons/dist/icons";
-
 // Brand colors
 $white: #ffffff;
 $brand-primary: #4848ec;
@@ -28,6 +25,7 @@ $letter-spacing-lg: 0.9px;
 $container-1280: 128rem;
 $container-740: 74rem;
 $container-640: 64rem;
+$sidebar: 34rem;
 
 // Mixins
 
@@ -46,7 +44,3 @@ $container-640: 64rem;
     }
 }
 
-@mixin icon($name) {
-    background-image: url('#{$icon-path}/#{$name}.svg');
-    background-repeat: no-repeat;
-}

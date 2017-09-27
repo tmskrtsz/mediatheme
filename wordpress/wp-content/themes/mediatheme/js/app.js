@@ -4,8 +4,8 @@
   $(document).ready(() => {
     // Initialize comment code
     const commentForm = $("#commentform"),
-      commentTextArea = $("textarea#comment"),
-      commentFields = $("#js-comment-details, p.form-submit");
+      		commentTextArea = $("textarea#comment"),
+      		commentFields = $("#js-comment-details, p.form-submit");
 		
 		let commentActive = false;
 
@@ -30,26 +30,73 @@
     commentForm.on("click", handleCommentTextArea);
 
     // Enlarge the textarea if the content eats up more space
-    commentTextArea.on("change keyup keydown paste cut", () => {
+    commentTextArea.on("change keyup keydown paste cut", function() {
       if (commentActive) {
         $(this)
           .height(128)
           .height(this.scrollHeight);
       }
     });
-
-    // Remove styles and states on clicking off elemnts
-    $(document).on("click", (e) => {
-      if (!commentForm.is(e.target) && commentForm.has(e.target).length === 0) {
-        if (!commentTextArea.val()) {
-          commentActive = false;
-          toggleCommentBox();
-        }
-      }
-		});
 		
 		$("#js-comment-details").prependTo(commentForm);
 		toggleCommentBox();
 		
+		const sidebar = $('#js-sidebar'),
+					sidebarToggle = $('#js-sidebar-open, #js-sidebar-close');
+		
+		let sidebarActive = false;
+
+		let handleSidebarToggle = (e) => {
+			e.preventDefault();
+
+			if (!sidebarActive) {
+				sidebarActive = true;
+
+				sidebar.addClass('active');
+				$('body').addClass('sidebar-active');
+			} 
+			
+			else {
+				sidebarActive = false;
+				sidebar.removeClass('active');
+				$('body').removeClass('sidebar-active');
+			}
+		}
+
+		sidebarToggle.on("click", handleSidebarToggle);
+
+		const searchToggleOpen = $('#js-search-open'),
+					searchToggleClose = $('#js-search-close');
+
+		let searchActive = false;
+
+		const handleSearchToggle = (e) => {
+			e.preventDefault();
+			if ( !searchActive ) {
+				searchActive = true;
+			 $('#js-search-overlay').addClass('active');
+			 $('body').css('overflow','hidden');
+			}
+
+			else {
+			 searchActive = false;
+			 $('#js-search-overlay').removeClass('active');
+			 $('body').css('overflow','auto');
+			}
+		}
+
+		searchToggleOpen.on("click", handleSearchToggle);
+		searchToggleClose.on("click", handleSearchToggle);
+
+		// Remove styles and states on clicking off elemnts
+		$(document).on("click", (event) => {
+			if (!commentForm.is(event.target) && commentForm.has(event.target).length === 0) {
+				if (!commentTextArea.val()) {
+					commentActive = false;
+					toggleCommentBox();
+				}
+			}
+		});
+
   });
 })(jQuery);

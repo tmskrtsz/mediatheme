@@ -21,17 +21,17 @@
 				?>
 			</nav>
 			<div class="site-logo">
-				<a class="site-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
+				<a class="site-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" alt="<?php bloginfo( 'name' ); ?>">
+					<?php get_template_part( 'dist/images/inline', 'logo.svg' ); ?>
+				</a>
 			</div>
 			<div class="site-navigation-right">
-				<a class="nav-search" href="#" alt="Search">Search</a>
-				<a class="nav-menu" href="#" alt="Menu">
+				<a id="js-search-open" class="nav-searchn icon icon-default" href="#" alt="Search">
+					<?php get_template_part( 'dist/images/inline', 'search.svg' ); ?>
+				</a>
+				<a id="js-sidebar-open" class="nav-menu icon icon-default" href="#" alt="Menu">
 					<span class="nav-menu-label"><?php echo __('Menu','mediatheme'); ?></span>
-					<div class="nav-menu-icon">
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
+					<?php get_template_part( 'dist/images/inline', 'menu.svg' ); ?>
 				</a>
 			</div>
 		</div>

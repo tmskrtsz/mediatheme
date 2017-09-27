@@ -62,7 +62,7 @@ module.exports = function(env) {
             {
               loader: 'file-loader',
               options: {
-                name: 'images/[name].[ext]',
+                name: 'images/inline-[name].[ext].php',
                 publicPath: './'
               },
             },
