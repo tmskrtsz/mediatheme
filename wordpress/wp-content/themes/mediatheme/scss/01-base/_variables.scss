@@ -1,3 +1,6 @@
+// Feather icons
+$icon-path: "~feather-icons/dist/icons";
+
 // Brand colors
 $white: #ffffff;
 $brand-primary: #4848ec;
@@ -41,4 +44,9 @@ $container-640: 64rem;
             width: calc(100% * (1 / #{$columns}) - #{$margin-left});
         }
     }
+}
+
+@mixin icon($name) {
+    background-image: url('#{$icon-path}/#{$name}.svg');
+    background-repeat: no-repeat;
 }

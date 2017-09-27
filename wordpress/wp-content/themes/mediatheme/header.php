@@ -10,16 +10,31 @@
 
 <body <?php body_class(); ?>>
 	<header class="site-header">
-		<nav id="site-navigation" class="main-navigation">
-			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-					'menu_class'	 => 'container-1280',
-				) );
-			?>
-			<div class="site-logo"></div>
-		</nav>
+		<div class="site-header-inner container-1280">
+			<nav id="site-navigation" class="main-navigation">
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+						'container'		 => '',
+					) );
+				?>
+			</nav>
+			<div class="site-logo">
+				<a class="site-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
+			</div>
+			<div class="site-navigation-right">
+				<a class="nav-search" href="#" alt="Search">Search</a>
+				<a class="nav-menu" href="#" alt="Menu">
+					<span class="nav-menu-label"><?php echo __('Menu','mediatheme'); ?></span>
+					<div class="nav-menu-icon">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</a>
+			</div>
+		</div>
 	</header>
 	<div class="site-branding container-1280">
 		<?php

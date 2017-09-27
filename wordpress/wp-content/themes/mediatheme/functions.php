@@ -116,14 +116,6 @@ add_action( 'widgets_init', 'mediatheme_widgets_init' );
 /**
  * Custom scripts
  */
- // Remove the classes from the list items in the navigation
- function remove_page_class($wp_list_pages) {
-	$pattern = '/\<li class="page_item[^>]*>/';
-	$replace_with = '<li>';
-	return preg_replace($pattern, $replace_with, $wp_list_pages);
-}
-add_filter('wp_list_pages', 'remove_page_class');
-
 // Index featured image width and height
 function wpdocs_theme_setup() {
     add_image_size( 'custom-image-thumb', 368, 222, true );
