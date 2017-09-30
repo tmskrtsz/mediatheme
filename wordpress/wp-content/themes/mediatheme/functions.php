@@ -143,6 +143,22 @@ function return_get_icon($icon) {
 }
 add_filter('get_icon','return_get_icon');
 
+add_theme_support( 'post-formats', array( 'video', 'gallery', 'chat', ) );
+
+function get_gradient() {
+	$gradients = array(
+		'#fbc2eb, #a6c1ee',
+		'#fbc2eb, #a6c1ee',
+		'#d4fc79, #96e6a1',
+		'#a1c4fd, #c2e9fb',
+		'#fa709a, #fee140',
+	);
+
+	$gradient = $gradients[mt_rand(0, count($gradients) - 1)]; 
+
+	return esc_html(sprintf('background-image:linear-gradient(-35deg, %s);', $gradient));
+}
+add_filter('the_post', 'get_gradient');
 /**
  * Enqueue scripts and styles.
  */

@@ -1,23 +1,17 @@
-<div class="col gallery">
+<div <?php post_class('col gallery') ?>>
 	<?php if ( has_post_thumbnail() ): ?>
 		<a class="gallery-thumbnail" href="<?php echo esc_url( get_permalink($post->ID) ) ?>">
 			<?php the_post_thumbnail('custom-image-thumb'); ?>
+		</a>
+	<?php else: ?>
+		<a class="gallery-thumbnail" href="<?php echo esc_url( get_permalink($post->ID) ) ?>">
+			<div class="gallery-thumbnail-gradient" style="<?php echo get_gradient(); ?>"></div>
 		</a>
 	<?php endif; ?>
 	<div class="gallery-meta">
 		<?php the_title( '<h2 class="gallery-title"><a href="' . 
 			  esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
-		<p>
-			<?php 
-				if ( has_post_thumbnail() ) {
-					echo get_limited_excerpt(12);
-				 }
-
-				 else {
-					 echo get_limited_excerpt(55);
-				 }
-			?>
-		</p>
+		<p><?php echo get_limited_excerpt(12); ?></p>
 	</div>
 	<div class="gallery-info">
 		<div class="gallery-author">

@@ -65,9 +65,6 @@
 
 		sidebarToggle.on("click", handleSidebarToggle);
 
-		const searchToggleOpen = $('#js-search-open'),
-					searchToggleClose = $('#js-search-close');
-
 		let searchActive = false;
 
 		const handleSearchToggle = (e) => {
@@ -85,8 +82,7 @@
 			}
 		}
 
-		searchToggleOpen.on("click", handleSearchToggle);
-		searchToggleClose.on("click", handleSearchToggle);
+		$('#js-search-open, #js-search-close').on("click", handleSearchToggle);
 
 		// Remove styles and states on clicking off elemnts
 		$(document).on("click", (event) => {
