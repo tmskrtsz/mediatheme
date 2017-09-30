@@ -1,6 +1,15 @@
 
 </div><!-- #content -->
 
+<div id="js-search-overlay" class="search">
+	<div class="search-inner container-640">
+		<a id="js-search-close" class="search-close icon icon-lg" href="#" alt="Close search">
+			<?php get_template_part( 'dist/images/inline', 'x.svg' ) ?>
+		</a>
+		<?php dynamic_sidebar( 'search' ); ?>
+	</div>
+</div>
+
 <footer id="colophon" class="site-footer container-1280">
 	<div class="site-info">
 		<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'mediatheme' ) ); ?>"><?php

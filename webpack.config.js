@@ -14,6 +14,16 @@ module.exports = function(env) {
     module: {
       rules: [
         {
+          test: /\.js$/,
+          exclude: path.resolve(__dirname, "node_modules"),
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['env']
+            }
+          }
+        },
+        {
           test: /\.css$/,
           exclude: path.resolve(__dirname, "node_modules"),
           use: ExtractTextPlugin.extract({
@@ -52,7 +62,7 @@ module.exports = function(env) {
             {
               loader: 'file-loader',
               options: {
-                name: 'images/[name].[ext]',
+                name: 'images/inline-[name].[ext].php',
                 publicPath: './'
               },
             },

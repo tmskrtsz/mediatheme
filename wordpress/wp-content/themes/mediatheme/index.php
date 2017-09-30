@@ -20,10 +20,17 @@ get_header(); ?>
 
 		<div id="primary" class="gallery-container">
 			<?php
-			if ( have_posts() ) :
+			$args = array(
+				'posts_per_page' 		=> '10',
+				'ignore_sticky_posts'	=> '1'
+			);
+
+			$the_query = new WP_Query( $args );
+
+			if ( $the_query->have_posts() ) :
 
 				/* Start the Loop */
-				while ( have_posts() ) : the_post();
+				while ( $the_query->have_posts() ) : $the_query->the_post();
 
 					/*
 					* Include the Post-Format-specific template for the content.

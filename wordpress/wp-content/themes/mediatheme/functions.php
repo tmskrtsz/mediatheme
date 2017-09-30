@@ -113,17 +113,19 @@ function mediatheme_widgets_init() {
 }
 add_action( 'widgets_init', 'mediatheme_widgets_init' );
 
+function mediatheme_search_widget() {
+	register_sidebar( array (
+		'name'			=> esc_html__( 'Search', 'mediatheme' ),
+		'id'			=> 'search',
+		'description'	=> esc_html__( 'The search page.', 'mediatheme' ),
+		'before_widget' => '',
+		'after_widget'  => '<small>' . esc_html__( 'Keywords, phrases, tags and other terms', 'mediatheme') . '</small>',
+	) );
+}
+add_action ( 'widgets_init', 'mediatheme_search_widget' );
 /**
  * Custom scripts
  */
- // Remove the classes from the list items in the navigation
- function remove_page_class($wp_list_pages) {
-	$pattern = '/\<li class="page_item[^>]*>/';
-	$replace_with = '<li>';
-	return preg_replace($pattern, $replace_with, $wp_list_pages);
-}
-add_filter('wp_list_pages', 'remove_page_class');
-
 // Index featured image width and height
 function wpdocs_theme_setup() {
     add_image_size( 'custom-image-thumb', 368, 222, true );
@@ -136,13 +138,34 @@ function get_limited_excerpt($limit) {
 }
 add_filter( 'jetpack_development_mode', '__return_true' );
 
+function return_get_icon($icon) {
+	return get_template_directory_uri() . '/dist/images/' . $icon . '.svg';
+}
+add_filter('get_icon','return_get_icon');
+
+add_theme_support( 'post-formats', array( 'video', 'gallery', 'chat', ) );
+
+function get_gradient() {
+	$gradients = array(
+		'#fbc2eb, #a6c1ee',
+		'#fbc2eb, #a6c1ee',
+		'#d4fc79, #96e6a1',
+		'#a1c4fd, #c2e9fb',
+		'#fa709a, #fee140',
+	);
+
+	$gradient = $gradients[mt_rand(0, count($gradients) - 1)]; 
+
+	return esc_html(sprintf('background-image:linear-gradient(-35deg, %s);', $gradient));
+}
+add_filter('the_post', 'get_gradient');
 /**
  * Enqueue scripts and styles.
  */
 function mediatheme_scripts() {
 	wp_enqueue_style( 'mediatheme-style', get_template_directory_uri() . '/dist/main.bundle.css' );
 
-	wp_enqueue_script( 'mediatheme-bundle', get_template_directory_uri() . '/dist/bundle.js', array( 'jquery' ), true);
+	wp_enqueue_script( 'mediatheme-bundle', get_template_directory_uri() . '/dist/bundle.js', array( 'jquery' ), '1', true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
