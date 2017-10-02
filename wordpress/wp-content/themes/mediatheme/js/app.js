@@ -54,9 +54,7 @@
 
 				sidebar.addClass('active');
 				$('body').addClass('sidebar-active');
-			} 
-			
-			else {
+			} else {
 				sidebarActive = false;
 				sidebar.removeClass('active');
 				$('body').removeClass('sidebar-active');
@@ -73,9 +71,7 @@
 				searchActive = true;
 			 $('#js-search-overlay').addClass('active');
 			 $('body').css('overflow','hidden');
-			}
-
-			else {
+			} else {
 			 searchActive = false;
 			 $('#js-search-overlay').removeClass('active');
 			 $('body').css('overflow','auto');

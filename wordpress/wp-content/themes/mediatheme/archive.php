@@ -15,7 +15,7 @@ get_header(); ?>
 			the_archive_description( '<div class="archive-description">', '</div>' );
 		?>
 	</div>
-	<div id="primary" class="container-gallery">
+	<div id="primary" class="gallery-container">
 
 		<?php
 		if ( have_posts() ) : ?>
