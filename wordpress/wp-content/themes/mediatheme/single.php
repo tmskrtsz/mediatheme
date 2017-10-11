@@ -30,48 +30,6 @@ get_header(); ?>
 			<?php if ( function_exists( 'echo_crp' ) ) { echo_crp(); } ?>
 		</div>
 	</div>
-	<!-- <div class="container-100">
-		<div class="post-navigation">
-			<?php
-				$previous_post = get_previous_post();
-				$next_post = get_next_post();
-				$next_post_thumb = (get_next_post() ? get_the_post_thumbnail_url($next_post->ID, 'full') : '');
-				$previous_post_thumb = (get_previous_post() ? get_the_post_thumbnail_url($previous_post->ID, 'full') : '');
-
-				if ( !empty( $previous_post ) ): ?>
-					<div class="post-previous" 
-						<?php if ( empty( $previous_post_thumb ) ):?>
-							style="background-color:#333;">
-						<?php
-						else: ?>
-							style="background-image:url(<?php echo $previous_post_thumb; ?>);">
-						<?php
-						endif;
-						?>
-						<a href="<?php echo esc_url( get_permalink( $previous_post->ID ) ); ?>">
-							<small><?php echo __('Previous Article', 'mediatheme'); ?></small>
-							<span class="post-navigation-title">
-								<?php echo apply_filters( 'the_title', $previous_post->post_title ); ?>
-							</span>
-						</a>
-					</div>
-				<?php 
-				endif; 
-
-				if ( !empty( $next_post ) ): ?>
-					<div class="post-next" style="background-image:url(<?php echo $next_post_thumb; ?>);">
-						<a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>">
-							<small><?php echo __('Next Article', 'mediatheme'); ?></small>
-							<span class="post-navigation-title">
-								<?php echo apply_filters( 'the_title', $next_post->post_title ); ?>
-							</span>
-						</a>
-					</div>
-				<?php
-				endif;
-			?>
-		</div>
-	</div> -->
 	<div class="container-640">
 		<?php
 			// If comments are open or we have at least one comment, load up the comment template.
@@ -83,10 +41,6 @@ get_header(); ?>
 	<?php
 		$previous_post = get_previous_post();
 		$next_post = get_next_post();
-		$next_post_thumb = (get_next_post() ? get_the_post_thumbnail_url($next_post->ID, 'full') : '');
-		$previous_post_thumb = (get_previous_post() ? get_the_post_thumbnail_url($previous_post->ID, 'full') : '');
-
-
 	?>
 	<div id="js-progress-header" class="scroll-header">
 		<div class="post-navigation just-start">

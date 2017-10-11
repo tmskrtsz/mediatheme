@@ -82,7 +82,6 @@ figure {
 // Container helper classes
 .bg-white {
     background-color: $white;
-    padding: 2em 0;
 }
 
 .btn {
@@ -135,13 +134,10 @@ figure {
     border-bottom: 2px solid;
     padding: 0.1em;
     transition: color 0.1s ease-in;
+    @extend %pressed;
 
     &:hover {
         color: $brand-dark;
-    }
-
-    &:active {
-        transform: scale(0.95);
     }
 }
 
@@ -160,10 +156,6 @@ figure {
         font-family: $font-primary;
         font-size: 1.8rem;
         line-height: $line-height-lg;
-    }
-
-    &.text-center {
-        text-align: center;
     }
 }
 
@@ -187,30 +179,7 @@ figure {
     }
 }
 
-// Utility classes
-//-- Aligning text
-.text-left {
-    text-align: left;
-}
-
-.text-right {
-    text-align: right;
-}
-
-.text-center {
-    text-align: center;
-}
-
-//-- Aligning contents of flex box
-
-.just-start {
-    justify-content: flex-start;
-}
-
-.just-center {
-    justify-content: center;
-}
-
-.just-end {
-    justify-content: flex-end;
+iframe {
+    display: flex;
+    margin: 0 auto;
 }
