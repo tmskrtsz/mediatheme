@@ -165,10 +165,11 @@ add_filter('the_post', 'get_gradient');
 function mediatheme_scripts() {
 	wp_enqueue_style( 'mediatheme-style', get_template_directory_uri() . '/dist/main.bundle.css' );
 
-	wp_enqueue_script( 'mediatheme-bundle', get_template_directory_uri() . '/dist/bundle.js', array( 'jquery' ), '1', true);
+	wp_enqueue_script( 'mediatheme-bundle', get_template_directory_uri() . '/dist/main.bundle.js', array( 'jquery' ), '1', true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
+		wp_enqueue_script( 'mediatheme-bundle-single', get_template_directory_uri() . '/dist/single.bundle.js', array( 'jquery' ), '1', true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'mediatheme_scripts' );

@@ -4,7 +4,9 @@ $icon-path: "~feather-icons/dist/icons";
 $icons: (
     'search',
     'menu',
-    'x'
+    'x',
+    'arrow-left',
+    'arrow-right'
 );
 
 @each $icon in $icons {

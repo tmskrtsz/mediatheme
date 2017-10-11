@@ -1,15 +1,19 @@
 const PATH = "wordpress/wp-content/themes/mediatheme";
 
-const webpack = require("webpack");
-const path = require("path");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const webpack = require("webpack"),
+      path = require("path"),
+      ExtractTextPlugin = require("extract-text-webpack-plugin"),
+      MinifyJs = require("babel-minify-webpack-plugin");
 
 module.exports = function(env) {
   return {
-    entry: [`./${PATH}/js/main.js`, `./${PATH}/scss/main.scss`],
+    entry: {
+      'main': `./${PATH}/js/main.js`,
+      'single': `./${PATH}/js/single.js`,
+    },
     output: {
       path: path.resolve(__dirname, `${PATH}/dist`),
-      filename: "bundle.js"
+      filename: "[name].bundle.js"
     },
     module: {
       rules: [
@@ -19,7 +23,7 @@ module.exports = function(env) {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['env']
+              presets: ['env'],
             }
           }
         },
@@ -93,7 +97,10 @@ module.exports = function(env) {
       new ExtractTextPlugin({
         filename: `[name].bundle.css`,
         allChunks: true
-      })
+      }),
+      new MinifyJs({}, {
+        sourceMap: true
+      }),
     ]
   };
 };

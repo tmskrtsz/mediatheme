@@ -14,7 +14,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 
 <aside id="js-sidebar" class="widget-area sidebar">
 	<header class="sidebar-header">
-		<h2>Sidebar</h2>
+		<h5>Sidebar</h5>
 		<a id="js-sidebar-close" class="icon icon-default" href="#" alt="Close sidebar">
 			<?php get_template_part( 'dist/images/inline', 'x.svg' ) ?>
 		</a>
