@@ -30,27 +30,3 @@ $sidebar: 34rem;
 
 // Easing
 $cubic-bezier: cubic-bezier(.22,1,.27,1);
-// Mixins
-
-// Container gallery flex options
-@mixin flex-gallery($columns:null, $margin-top:null, $margin-left:null) {
-    display: flex;
-    flex-wrap: wrap;
-    @if $margin-top and $margin-left {
-        margin: -#{$margin-left} 0 0 -#{$margin-left};
-    }
-
-    @if $columns {
-        .col {
-            display: flex;
-            margin-top: $margin-top;
-            margin-left: $margin-left;
-            @if $margin-left {
-                width: calc(100% * (1 / #{$columns}) - #{$margin-left});
-            } @else {
-                width: calc(100% * (1 / #{$columns});
-            }
-        }
-    }
-}
-
