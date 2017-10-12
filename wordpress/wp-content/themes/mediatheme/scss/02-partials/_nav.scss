@@ -75,13 +75,6 @@ a.nav-search {
     display: inline-block;
     width: 24px;
     height: 24px;
-    @extend %pressed;
-
-    &:hover {
-        svg {
-            stroke: $brand-primary;
-        }
-    }
 }
 
 .nav-menu {
@@ -92,10 +85,6 @@ a.nav-search {
     &:hover {
         span {
             color: $brand-primary;
-        }
-
-        svg {
-            stroke: $brand-primary;
         }
     }
 

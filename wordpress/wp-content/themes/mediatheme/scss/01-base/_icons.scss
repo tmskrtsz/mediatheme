@@ -16,12 +16,20 @@ $icons: (
 }
 
 .icon {
+    @extend %pressed;
+    
     &-default {
         height: 24px;
     }
 
     svg {
         stroke: $brand-dark;
+    }
+
+    &:hover {
+        svg {
+            stroke: $brand-primary;
+        }
     }
 }
 

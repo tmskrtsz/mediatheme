@@ -46,18 +46,25 @@
 		
 		let sidebarActive = false;
 
+		function openSidebar() {
+			sidebarActive = true;
+			sidebar.addClass('active');
+			$('body').addClass('sidebar-active');
+		}
+
+		function closeSidebar() {
+			sidebarActive = false;
+			sidebar.removeClass('active');
+			$('body').removeClass('sidebar-active');
+		}
+
 		let handleSidebarToggle = (e) => {
 			e.preventDefault();
 
 			if (!sidebarActive) {
-				sidebarActive = true;
-
-				sidebar.addClass('active');
-				$('body').addClass('sidebar-active');
+				openSidebar();
 			} else {
-				sidebarActive = false;
-				sidebar.removeClass('active');
-				$('body').removeClass('sidebar-active');
+				closeSidebar();
 			}
 		}
 
@@ -97,8 +104,9 @@
 				}
 			}
 
-			if ( searchActive && event.keyCode === 27 ) {
+			if ( searchActive && event.keyCode === 27 || sidebarActive && event.keyCode === 27 ) {
 				closeSearch();
+				closeSidebar();
 			}
 		});
 

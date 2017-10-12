@@ -14,15 +14,29 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 1.35em 2em;
+        padding: 2em;
+        height: 7rem;
         border-bottom: 1px solid $border-color;
     }
 
     &-inner {
-        padding: 1.35em 2em;
+        // padding: 1.35em 2em;
     }
 
     &.active {
         transform: translate(0);
+    }
+}
+
+section.widget {
+    border-bottom: 1px solid $border-color;
+    padding: 1.2em 2em;
+
+    ul li {
+        list-style: none;
+    }
+
+    a {
+        @extend %link-style;
     }
 }
