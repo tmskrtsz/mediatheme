@@ -6,6 +6,28 @@
             margin-right: -80px;
         }
 
+        a {
+            color: $brand-primary;
+            position: relative;
+            z-index: 100;
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 3px;
+                width: 100%;
+                height: 7px;
+                background-color: rgba($brand-primary, 0.12);
+                z-index: -1;
+                transition: all 0.15s $cubic-bezier;
+            }
+        
+            &:hover {
+                &::before {
+                    height: 85%;
+                }
+            }
+        }
         & > p, ul, ol {
             font-family: $font-secondary;
             font-size: 2.1rem;

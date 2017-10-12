@@ -170,11 +170,11 @@ figure {
     transition: all 0.15s ease-in-out;
 
     &-pink {
-        background-color: $brand-pink;
+        background-color: $brand-accent;
         color: $white;
 
         &:hover {
-            background-color: rgba($brand-pink, 0.7);
+            background-color: rgba($brand-accent, 0.7);
         }
     }
 }

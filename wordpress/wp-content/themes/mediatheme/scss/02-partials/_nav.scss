@@ -36,6 +36,7 @@ nav.main-navigation {
             font-size: 1.6rem;
             font-weight: 700;
             color: $brand-dark;
+            @extend %pressed;
 
             &:hover {
                 color: $brand-primary;
@@ -70,15 +71,33 @@ nav.main-navigation {
     }
 }
 
-.nav-search {
+a.nav-search {
     display: inline-block;
     width: 24px;
     height: 24px;
+    @extend %pressed;
+
+    &:hover {
+        svg {
+            stroke: $brand-primary;
+        }
+    }
 }
 
 .nav-menu {
     display: flex;
     position: relative;
+    @extend %pressed;
+
+    &:hover {
+        span {
+            color: $brand-primary;
+        }
+
+        svg {
+            stroke: $brand-primary;
+        }
+    }
 
     &-label {
         font-size: 1.6rem;

@@ -1,11 +1,27 @@
 .gallery {
     background-color: $white;
-    border-radius: 6px;
     border: 1px solid darken($bg-color, 4%);
+    box-shadow: 0 8px 40px rgba($brand-dark, 0.09);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: box-shadow 0.2s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 3px 20px rgba($brand-dark, 0.09);
+
+        & > .gallery-thumbnail {
+            &::after,
+            &::before {
+                opacity: 1;
+            }
+        }
+        & > .gallery-meta .btn-primary {
+            background-color: $brand-primary;
+            color: $white;
+        }
+    }
 
     &-container {
         @include flex-gallery(3, 40px, 40px);
@@ -13,7 +29,6 @@
 
     &-thumbnail {
         background-color: $white;
-        padding: 15px;
         max-height: 222px;
         z-index: 50;
         box-sizing: content-box;
@@ -22,7 +37,6 @@
 
         img {
             width: 100%;
-            border-radius: 3px;
         }
 
         &-gradient {
@@ -48,10 +62,10 @@
             content: "";
             background-color: rgba(#000, 0.7);
             position: absolute;
-            top: 15px;
-            right: 15px;
-            bottom: 15px;
-            left: 15px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
             border-radius: 3px;
             opacity: 0;
             transition: all 0.15s ease-in-out;
@@ -109,19 +123,6 @@
         }
     }
 
-    &:hover {
-        & > .gallery-thumbnail {
-            &::after,
-            &::before {
-                opacity: 1;
-            }
-        }
-        & > .gallery-meta .btn-primary {
-            background-color: $brand-primary;
-            color: $white;
-        }
-    }
-
     &.post-sticky {
         flex-direction: row;
 
@@ -136,7 +137,6 @@
                 height: 100%;
                 background-position: center;
                 background-size: cover;
-                border-radius: 3px;
             }
 
             &-gradient {

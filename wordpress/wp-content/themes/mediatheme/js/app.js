@@ -65,28 +65,40 @@
 
 		let searchActive = false;
 
+		function closeSearch() {
+			searchActive = false;
+			$('#js-search-overlay').removeClass('active');
+			$('body').css('overflow','auto');
+		}
+
+		function openSearch() {
+			searchActive = true;
+			$('#js-search-overlay').addClass('active');
+			$('body').css('overflow','hidden');
+		}
+
 		const handleSearchToggle = (e) => {
 			e.preventDefault();
 			if ( !searchActive ) {
-				searchActive = true;
-			 $('#js-search-overlay').addClass('active');
-			 $('body').css('overflow','hidden');
+				openSearch();
 			} else {
-			 searchActive = false;
-			 $('#js-search-overlay').removeClass('active');
-			 $('body').css('overflow','auto');
+				closeSearch();
 			}
 		}
 
 		$('#js-search-open, #js-search-close').on("click", handleSearchToggle);
 
 		// Remove styles and states on clicking off elemnts
-		$(document).on("click", (event) => {
+		$(document).on("click keydown", (event) => {
 			if (!commentForm.is(event.target) && commentForm.has(event.target).length === 0) {
 				if (!commentTextArea.val()) {
 					commentActive = false;
 					toggleCommentBox();
 				}
+			}
+
+			if ( searchActive && event.keyCode === 27 ) {
+				closeSearch();
 			}
 		});
 

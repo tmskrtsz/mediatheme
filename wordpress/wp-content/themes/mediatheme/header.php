@@ -26,7 +26,7 @@
 				</a>
 			</div>
 			<div class="site-navigation-right">
-				<a id="js-search-open" class="nav-searchn icon icon-default" href="#" alt="Search">
+				<a id="js-search-open" class="nav-search icon icon-default" href="#" alt="Search">
 					<?php get_template_part( 'dist/images/inline', 'search.svg' ); ?>
 				</a>
 				<a id="js-sidebar-open" class="nav-menu icon icon-default" href="#" alt="Menu">
