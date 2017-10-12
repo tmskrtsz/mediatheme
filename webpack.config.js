@@ -1,9 +1,10 @@
 const PATH = "wordpress/wp-content/themes/mediatheme";
 
-const webpack = require("webpack"),
-      path = require("path"),
+const webpack           = require("webpack"),
+      path              = require("path"),
       ExtractTextPlugin = require("extract-text-webpack-plugin"),
-      MinifyJs = require("babel-minify-webpack-plugin");
+      MinifyJs          = require("babel-minify-webpack-plugin"),
+      StyleLint         = require('stylelint-webpack-plugin');
 
 module.exports = function(env) {
   return {
@@ -96,10 +97,15 @@ module.exports = function(env) {
     plugins: [
       new ExtractTextPlugin({
         filename: `[name].bundle.css`,
-        allChunks: true
+        allChunks: true,
       }),
       new MinifyJs({}, {
-        sourceMap: true
+        sourceMap: true,
+      }),
+      new StyleLint({
+        configFile: '.stylelintrc',
+        content: `${PATH}/scss`,
+        syntax: 'scss',
       }),
     ]
   };

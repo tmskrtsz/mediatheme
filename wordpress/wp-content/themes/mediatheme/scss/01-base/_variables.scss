@@ -1,9 +1,9 @@
 // Brand colors
-$white: #ffffff;
+$white: #fff;
 $brand-primary: #4848ec;
-$brand-accent: #EC439D;
-$brand-dark: #333333;
-$brand-black: #000000;
+$brand-accent: #ec439d;
+$brand-dark: #333;
+$brand-black: #000;
 $bg-color: #fafbff;
 $border-color: darken($bg-color, 4%);
 
@@ -29,4 +29,4 @@ $container-640: 64rem;
 $sidebar: 34rem;
 
 // Easing
-$cubic-bezier: cubic-bezier(.22,1,.27,1);
+$cubic-bezier: cubic-bezier(.22, 1, .27, 1);

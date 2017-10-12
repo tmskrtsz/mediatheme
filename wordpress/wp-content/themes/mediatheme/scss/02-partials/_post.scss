@@ -1,106 +1,106 @@
-.post {
-    &-single,
-    &-page {
-        
-        .content-title {
-            margin-left: -80px;
-            margin-right: -80px;
-        }
+.post-single,
+.post-page {
+    .content-title {
+        margin-left: -80px;
+        margin-right: -80px;
+    }
 
-        a {
-            @extend %link-style;
-        }
+    a {
+        @extend %link-style;
+    }
 
-        & > p, ul, ol {
-            font-family: $font-secondary;
-            font-size: 2.1rem;
-            line-height: $line-height-lg;
-            margin: 2em 0;
-            color: rgba($brand-dark, 0.9);
-        }
+    p,
+    ul,
+    ol {
+        font-family: $font-secondary;
+        font-size: 2.1rem;
+        line-height: $line-height-lg;
+        margin: 2em 0;
+        color: rgba($brand-dark, 0.9);
+    }
+
+    img {
+        max-width: 110%;
+        position: relative;
+        left: -6%;
+    }
+
+    figure {
+        max-width: 100%;
+    }
     
-        img {
-            max-width: 110%;
-            position: relative;
-            left: -6%;
-        }
-
-        figure {
-            max-width: 100%
-        }
-        
-        figcaption {
-            text-align: center;
-            position: relative;
-            left: -6%;
-            margin: 0.5em 0;
-        }
-
-        ul, ol {
-            padding: 0 2em;
-        }
-
-        blockquote {
-            font-size: 2.8rem;
-            font-family: $font-secondary;
-            line-height: $line-height-lg;
-            font-weight: 400;
-            font-style: italic;
-            color: $brand-primary;
-            text-align: center;
-            border-left: 4px solid;
-            background-color: rgba($border-color, 0.15);
-            padding: 1em 2em;
-            margin-top: 2em;
-            margin-bottom: 2em;
-            margin-left: -80px;
-            margin-right: -80px;
-            position: relative;
-        }
+    figcaption {
+        text-align: center;
+        position: relative;
+        left: -6%;
+        margin: 0.5em 0;
     }
 
-    &-date {
-        text-transform: uppercase;
-        color: $text-muted;
-        font-size: 1.2rem;
-        letter-spacing: $letter-spacing-lg;
+    ul,
+    ol {
+        padding: 0 2em;
     }
 
-    &-banner {
-        height: 600px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    // Related post list at the bottom of the article
-    &-related {
-        display: flex;
-        overflow: hidden;
-        padding-top: 1.2em;
-
-        &-container {
-            @include flex-gallery(3, 20px, 20px);
-        }
-
-        a {
-            img {
-                max-width: 100%;
-                height: 140px;
-                object-fit: cover;
-                left: 0;
-            }
-
-            span {
-                color: $brand-dark;
-                font-weight: 700;
-            }
-        }
+    blockquote p {
+        font-size: 2.8rem;
+        font-family: $font-secondary;
+        line-height: $line-height-lg;
+        font-weight: 400;
+        font-style: italic;
+        color: $brand-primary;
+        text-align: center;
+        border-left: 4px solid;
+        background-color: rgba($border-color, 0.15);
+        padding: 1em 2em;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        margin-left: -80px;
+        margin-right: -80px;
+        position: relative;
     }
 }
 
+.post-date {
+    text-transform: uppercase;
+    color: $text-muted;
+    font-size: 1.2rem;
+    letter-spacing: $letter-spacing-lg;
+}
+
+.post-banner {
+    height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+// Related post list at the bottom of the article
+.post-related {
+    display: flex;
+    overflow: hidden;
+    padding-top: 1.2em;
+}
+
+.ppost-related a {
+    img {
+        max-width: 100%;
+        height: 140px;
+        object-fit: cover;
+        left: 0;
+    }
+
+    span {
+        color: $brand-dark;
+        font-weight: 700;
+    }
+}
+
+.post-related-container {
+    @include flex-gallery(3, 20px, 20px);
+}
+
 // Related posts outer container
-.crp_related {
+.crp_related { /* stylelint-disable-line */
     padding: 4em 0; 
 }
 
@@ -118,12 +118,12 @@
     background-color: rgba($white, 0.97);
     text-align: center;
     visibility: hidden;
-    transform: translate3d(0,-100%,0);
+    transform: translate3d(0, -100%, 0);
     transition: all 0.3s $cubic-bezier;
     overflow: hidden;
 
     &::after {
-        content: "";
+        content: '';
         position: absolute;
         bottom: 0;
         left: 0;
@@ -137,7 +137,7 @@
 
     &.active {
         visibility: visible;
-        transform: translate3d(0,0,0);
+        transform: translate3d(0, 0, 0);
     }
 
     &-title {

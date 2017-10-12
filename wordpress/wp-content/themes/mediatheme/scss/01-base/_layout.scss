@@ -1,4 +1,6 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -20,7 +22,11 @@ a {
     text-decoration: none;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     font-weight: 700;
     color: $brand-dark;
 }
@@ -55,7 +61,6 @@ figure {
 }
 
 .container {
-
     &-1280,
     &-740,
     &-640 {
@@ -85,21 +90,7 @@ figure {
 }
 
 .btn {
-    font-size: 1.4rem;
-    font-weight: 700;
-    letter-spacing: $letter-spacing-sm;
-    display: inline-block;
-    padding: 0.6em 1.4em;
-    border: 0;
-    border-radius: 40px;
-    transition: all 0.15s ease-in-out;
-    cursor: pointer;
-    opacity: 1;
-
-    &:active {
-        transform: scale(0.97);
-        opacity: 0.5;
-    }
+    @extend %button;
 }
 
 .btn-primary {
@@ -139,10 +130,6 @@ figure {
     &:hover {
         color: $brand-dark;
     }
-}
-
-.btn-sm {
-    padding: 0.2em 0.8em;
 }
 
 .content-title {

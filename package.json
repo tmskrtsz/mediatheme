@@ -25,5 +25,10 @@
   },
   "scripts": {
     "watch": "webpack --watch"
+  },
+  "devDependencies": {
+    "stylelint": "^8.2.0",
+    "stylelint-config-sass-guidelines": "^3.1.0",
+    "stylelint-webpack-plugin": "^0.9.0"
   }
 }

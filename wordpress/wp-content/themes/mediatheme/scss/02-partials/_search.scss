@@ -9,43 +9,41 @@
     justify-content: center;
     display: none;
 
-    &-inner {
-        margin-top: 12em;
+    &.active {
+        display: flex;
+    }
+}
 
-        form.search-form {
-            position: relative;
-        }
+.search-overlay-inner {
+    margin-top: 12em;
 
-        span.screen-reader-text {
-            display: none;
-        }
+    form.search-form {
+        position: relative;
+    }
 
-        input[type="search"] {
-            font-family: $font-secondary;
-            width: 100%;
-            padding: 1.2em 0;
-            margin-bottom: 1.2em;
-            border: 0;
-            outline: 0;
-            border-bottom: 1px solid $border-color;
-            transition: all 0.15s ease-in-out;
+    span.screen-reader-text {
+        display: none;
+    }
 
-            &:focus {
-                border-bottom-color: $brand-primary;
-            }
-        }
+    input[type='search'] {
+        font-family: $font-secondary;
+        width: 100%;
+        padding: 1.2em 0;
+        margin-bottom: 1.2em;
+        border: 0;
+        outline: 0;
+        border-bottom: 1px solid $border-color;
+        transition: all 0.15s ease-in-out;
 
-        input[type="submit"] {
-            @extend .btn;
-            @extend .btn-primary;
-            position: absolute;
-            top: 0;
-            right: 0;
+        &:focus {
+            border-bottom-color: $brand-primary;
         }
     }
 
-    &.active {
-        display: flex;
+    button {
+        position: absolute;
+        top: 0;
+        right: 0;
     }
 }
 
