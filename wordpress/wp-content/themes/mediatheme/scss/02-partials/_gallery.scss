@@ -1,27 +1,20 @@
 .gallery {
-    background-color: $white;
-    border: 1px solid darken($bg-color, 4%);
-    box-shadow: 0 8px 40px rgba($brand-dark, 0.09);
-    overflow: hidden;
+    @extend %default-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: box-shadow 0.2s ease-in-out;
 
     &:hover {
-        box-shadow: 0 3px 20px rgba($brand-dark, 0.09);
-
         .gallery-thumbnail {
             &::after,
             &::before {
                 opacity: 1;
             }
         }
+    }
 
-        .gallery-meta .btn-primary {
-            background-color: $brand-primary;
-            color: $white;
-        }
+    &.col {
+        position: relative;
     }
 }
 
@@ -44,7 +37,6 @@
     &-gradient {
         width: 100%;
         height: 222px;
-        border-radius: 3px;
     }
 
     &::before {
@@ -68,7 +60,6 @@
         right: 0;
         bottom: 0;
         left: 0;
-        border-radius: 3px;
         opacity: 0;
         transition: all 0.15s ease-in-out;
         z-index: 50;
@@ -80,7 +71,6 @@
     flex-direction: column;
     justify-content: center;
     padding: 15px;
-    position: relative;
     z-index: 100;
     transition: all 0.15s ease-in-out;
 
@@ -156,8 +146,15 @@
         padding: 0;
         margin-bottom: 1.2em;
     }
+    
+    .gallery-category {
+        margin: 1.2em 0;
+    }
 }
 
-.gallery-category {
-    margin: 1.2em 0;
+.gallery.post {
+    .gallery-category {
+        position: absolute;
+        top: 210px;
+    }
 }

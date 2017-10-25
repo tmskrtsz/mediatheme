@@ -48,6 +48,7 @@ nav.main-navigation {
 .site-logo {
     text-align: center;
     max-height: 26px;
+    @extend %pressed;
 
     &-link {
         width: 180px;

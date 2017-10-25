@@ -20,6 +20,18 @@
     }
 }
 
+%default-box {
+    background-color: $white;
+    box-shadow: 0 8px 40px rgba($brand-dark, 0.09);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease-in-out;
+    will-change: box-shadow;
+
+    &:hover {
+        box-shadow: 0 3px 20px rgba($brand-dark, 0.09);
+    }
+}
+
 %button {
     font-size: 1.4rem;
     font-weight: 700;

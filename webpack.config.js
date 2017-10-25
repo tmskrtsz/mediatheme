@@ -14,19 +14,25 @@ module.exports = function(env) {
     },
     output: {
       path: path.resolve(__dirname, `${PATH}/dist`),
-      filename: "[name].bundle.js"
+      filename: "[name].bundle.js",
     },
     module: {
       rules: [
         {
+          enforce: "pre",
           test: /\.js$/,
           exclude: path.resolve(__dirname, "node_modules"),
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['env'],
-            }
-          }
+          use: [
+            {
+              loader: "babel-loader",
+              options: {
+                presets: ["env"],
+              }
+            },
+            {
+              loader: "eslint-loader",
+            },
+          ]
         },
         {
           test: /\.css$/,
@@ -44,7 +50,7 @@ module.exports = function(env) {
                 loader: "css-loader", 
                 options: { 
                   sourceMap: true, 
-                  minimize: false 
+                  minimize: true,
                 } 
               },
               {
@@ -53,21 +59,25 @@ module.exports = function(env) {
                   sourceMap: true,
                   plugins: [
                     require("postcss-flexbugs-fixes"),
-                    require("autoprefixer")
+                    require("autoprefixer"),
                   ]
                 }
               },
-              { loader: "sass-loader", options: { sourceMap: true } }
+              { 
+                loader: "sass-loader", 
+                options: { 
+                  sourceMap: true,
+                } 
+              }
             ]
           })
         },
         {
-          test: /\.(jpg|png|gif|svg)$/,
+          test: /\.(jpg|png|gif)$/,
           use: [
             {
               loader: 'file-loader',
               options: {
-                name: 'images/inline-[name].[ext].php',
                 publicPath: './'
               },
             },
@@ -82,16 +92,28 @@ module.exports = function(env) {
                 },
                 pngquant: {
                   quality: '65-90',
-                  speed: 4
+                  speed: 4,
                 },
                 mozjpeg: {
                   progressive: true,
-                  quality: 65
+                  quality: 65,
                 },
               },
             }
           ]
         },
+        {
+          test: /\.svg$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'images/inline-[name].[ext].php',
+                publicPath: './',
+              }
+            },
+          ] 
+        }
       ]
     },
     plugins: [

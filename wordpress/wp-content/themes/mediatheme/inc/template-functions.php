@@ -30,3 +30,14 @@ function mediatheme_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'mediatheme_pingback_header' );
+
+function add_categories( $count ) {
+	$categories = get_the_category();
+
+	if ( !empty($categories) ) {
+		for ($i = 0; $i < $count; $i++) {
+			echo sprintf( '<a class="pill pill-pink gallery-category-link" href="%s">%s</a>', esc_url( get_category_link( $categories[$i] ) ), $categories[$i]->name);
+		}
+	}
+}
+add_action( 'get_categories', 'add_categories' );

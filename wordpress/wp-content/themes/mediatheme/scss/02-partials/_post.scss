@@ -121,6 +121,7 @@
     transform: translate3d(0, -100%, 0);
     transition: all 0.3s $cubic-bezier;
     overflow: hidden;
+    z-index: 1000;
 
     &::after {
         content: '';
