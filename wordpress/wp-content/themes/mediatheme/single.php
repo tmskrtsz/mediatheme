@@ -30,7 +30,7 @@ get_header(); ?>
 	<div class="container-740">
 		<?php if ( function_exists( 'echo_crp' ) ) { echo_crp(); } ?>
 	</div>
-	<div class="container-640">
+	<div class="container-740">
 		<?php
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :

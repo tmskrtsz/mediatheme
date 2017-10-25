@@ -1,5 +1,7 @@
 .post-single,
 .post-page {
+    padding-bottom: 1px;
+
     .content-title {
         margin-left: -80px;
         margin-right: -80px;
@@ -81,17 +83,34 @@
     padding-top: 1.2em;
 }
 
-.ppost-related a {
+.post-related a {
+    background-color: $white;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    padding: 12px;
+
+    &:hover {
+        img {
+            opacity: 0.8;
+        }
+
+        span {
+            color: $brand-primary;
+        }
+    }
+    
     img {
         max-width: 100%;
         height: 140px;
         object-fit: cover;
         left: 0;
+        transition: all 0.15s ease-in-out;
     }
 
     span {
         color: $brand-dark;
         font-weight: 700;
+        transition: all 0.15s ease-in-out;
     }
 }
 
@@ -101,7 +120,7 @@
 
 // Related posts outer container
 .crp_related { /* stylelint-disable-line */
-    padding: 4em 0; 
+    padding: 4em 0;
 }
 
 // Heading that comes into view on scroll
