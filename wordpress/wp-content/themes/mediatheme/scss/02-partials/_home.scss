@@ -1,0 +1,57 @@
+.site-branding {
+    position: relative;
+    text-align: center;
+    padding: 2em 0;
+    min-height: 368px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h1 {
+        color: $brand-dark;
+        margin: 0.5em 0;
+    }
+
+    p {
+        color: $text-muted;
+    }
+
+    canvas {
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        right: 0;
+    }
+}
+
+.social-media {
+    margin: 1em 0;
+    padding: 1em 0;
+    border-top: 1px solid $border-color;
+}
+
+a.social-media-link {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: 0 0.7em;
+
+    &.facebook svg {
+        stroke: #3b5998;
+    }
+
+    &.twitter svg {
+        stroke: #1da1f2;
+    }
+
+    &.youtube svg {
+        path {
+            stroke: #f00;
+        }
+
+        polygon {
+            fill: #f00;
+        }
+    }
+}

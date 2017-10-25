@@ -26,9 +26,9 @@ get_header(); ?>
 				the_content();
 			?>
 		</article>
-		<div class="container-740">
-			<?php if ( function_exists( 'echo_crp' ) ) { echo_crp(); } ?>
-		</div>
+	</div>
+	<div class="container-740">
+		<?php if ( function_exists( 'echo_crp' ) ) { echo_crp(); } ?>
 	</div>
 	<div class="container-640">
 		<?php

@@ -19,10 +19,6 @@
         border-bottom: 1px solid $border-color;
     }
 
-    &-inner {
-        // padding: 1.35em 2em;
-    }
-
     &.active {
         transform: translate(0);
     }
@@ -38,5 +34,6 @@ section.widget {
 
     a {
         @extend %link-style;
+        display: inline-block;
     }
 }

@@ -9,22 +9,24 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+<div <?php post_class('search-item'); the_title( 'aria-title="', '"' ); ?>>
+	<header class="search-item-header">
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php mediatheme_posted_on(); ?>
+		<div class="search-item-meta">
+			<span>Written by</span>
+			<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ?>">
+				<?php echo get_the_author(); ?>
+			</a>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-summary">
+	<div class="search-item-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php mediatheme_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+	<a class="btn btn-double btn-block" 
+		href="<?php echo esc_url( get_permalink($post->ID) ) ?>">
+	<?php echo __('Read More', 'mediatheme') ?></a>
+</div>

@@ -1,3 +1,11 @@
+<?php
+/**
+ * Individual article cards.
+ *
+ * @package Mediatheme
+ */
+
+ ?>
 <div <?php post_class('col gallery') ?>>
 	<?php if ( has_post_thumbnail() ): ?>
 		<a class="gallery-thumbnail" href="<?php echo esc_url( get_permalink($post->ID) ) ?>">
@@ -9,6 +17,9 @@
 		</a>
 	<?php endif; ?>
 	<div class="gallery-meta">
+		<div class="gallery-category">
+			<?php add_categories(1); ?>
+		</div>
 		<?php the_title( '<h2 class="gallery-title"><a href="' . 
 			  esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 		<p><?php echo get_limited_excerpt(12); ?></p>

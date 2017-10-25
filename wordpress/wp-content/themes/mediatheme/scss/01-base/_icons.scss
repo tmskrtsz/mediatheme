@@ -1,17 +1,30 @@
 // Feather icons
 $icon-path: '~feather-icons/dist/icons';
+$asset-path: '../assets';
 
 $icons: (
     'search',
     'menu',
     'x',
     'arrow-left',
-    'arrow-right'
+    'arrow-right',
+    'facebook',
+    'twitter',
 );
 
+$assets: (
+    'logo',
+    'youtube',
+);
 @each $icon in $icons {
     .icon-#{$icon} {
         background-image: url('#{$icon-path}/#{$icon}.svg');
+    }
+}
+
+@each $asset in $assets {
+    .#{$asset} {
+        background-image: url('#{$asset-path}/#{$asset}.svg');
     }
 }
 
@@ -33,6 +46,3 @@ $icons: (
     }
 }
 
-.icon-logo {
-    background-image: url('../assets/logo.svg');
-}

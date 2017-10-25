@@ -1,26 +1,29 @@
-($ => {
-  $(document).ready(() => {
-    $(window).on("scroll", () => {
-      let winScroll = $(window).scrollTop(),
-        winHeight = $(window).height(),
-        article = $("#js-article"),
-        articleHeight = article.outerHeight(true);
+(($) => {
+	$(document).ready(() => {
+		$(window).on('scroll', () => {
+			const winScroll = $(window).scrollTop();
+			const winHeight = $(window).height();
+			const article = $('#js-article');
+			const articleHeight = article.outerHeight(true);
 
-      winScroll >= article.offset().top
-        ? $("#js-progress-header").addClass("active")
-        : $("#js-progress-header").removeClass("active");
+			if (winScroll >= article.offset().top) {
+				$('#js-progress-header').addClass('active');
+			} else {
+				$('#js-progress-header').removeClass('active');
+			}
 
-      let totalWidth = () => {
-        let currentHeight = winScroll / (articleHeight - winHeight) * 100;
+			const totalWidth = () => {
+				let currentHeight = (winScroll / (articleHeight - winHeight)) * 100;
 
-        if (currentHeight >= 100) {
-          return (currentHeight = 100 + "%");
-        }
+				if (currentHeight >= 100) {
+					currentHeight = `${100}%`;
+					return currentHeight;
+				}
 
-        return currentHeight + "%";
-      };
+				return `${currentHeight}%`;
+			};
 
-      $("#js-progress-bar").css("width", totalWidth());
-    });
-  });
+			$('#js-progress-bar').css('width', totalWidth());
+		});
+	});
 })(jQuery);
