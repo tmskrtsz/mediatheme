@@ -38,20 +38,32 @@ a.social-media-link {
     margin: 0 0.7em;
 
     &.facebook svg {
-        stroke: #3b5998;
+        stroke: $facebook;
+
+        &:hover {
+            opacity: 0.7;
+        }
     }
 
     &.twitter svg {
-        stroke: #1da1f2;
+        stroke: $twitter;
+
+        &:hover {
+            opacity: 0.7;
+        }
     }
 
     &.youtube svg {
         path {
-            stroke: #f00;
+            stroke: $youtube;
         }
 
         polygon {
-            fill: #f00;
+            fill: $youtube;
+        }
+
+        &:hover {
+            opacity: 0.7;
         }
     }
 }

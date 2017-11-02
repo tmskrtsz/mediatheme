@@ -30,13 +30,13 @@ get_header(); ?>
 			endif; 
 		endif; ?>
 		<div class="social-media">
-			<a class="facebook social-media-link" href="#" target="_blank" rel="noopener">
+			<a class="facebook social-media-link" href="<?php echo get_theme_mod( 'facebook', '#' )?>" target="_blank" rel="noopener">
 				<?php get_template_part( 'dist/images/inline', 'facebook.svg' ); ?>
 			</a>
-			<a class="twitter social-media-link" href="#" target="_blank" rel="noopener">
+			<a class="twitter social-media-link" href="<?php echo get_theme_mod( 'twitter', '#' )?>" target="_blank" rel="noopener">
 				<?php get_template_part( 'dist/images/inline', 'twitter.svg' ); ?>
 			</a>
-			<a class="youtube social-media-link" href="#" target="_blank" rel="noopener">
+			<a class="youtube social-media-link" href="<?php echo get_theme_mod( 'youtube', '#' )?>" target="_blank" rel="noopener">
 				<?php get_template_part( 'dist/images/inline', 'youtube.svg' ); ?>
 			</a>
 		</div>

@@ -159,6 +159,7 @@ function get_gradient() {
 	return esc_html(sprintf('background-image:linear-gradient(-35deg, %s);', $gradient));
 }
 add_filter('the_post', 'get_gradient');
+
 /**
  * Enqueue scripts and styles.
  */

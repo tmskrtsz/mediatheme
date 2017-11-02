@@ -41,3 +41,4 @@ function add_categories( $count ) {
 	}
 }
 add_action( 'get_categories', 'add_categories' );
+

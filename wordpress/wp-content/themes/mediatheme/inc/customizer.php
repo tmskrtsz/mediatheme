@@ -25,6 +25,47 @@ function mediatheme_customize_register( $wp_customize ) {
 			'render_callback' => 'mediatheme_customize_partial_blogdescription',
 		) );
 	}
+
+
+	$wp_customize->add_section( 'social_links', array(
+		'title'			=> 'Social Media Links',
+		'description'	=> 'The links should contain the protocol (https://) part.',
+		'priority'		=> '30'
+	) );
+
+	$wp_customize->add_setting( 'facebook', array(
+		'default'		=> '',
+		'transport'		=> 'refresh'
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'facebook', array(
+		'label'			=> 'Facebook',
+		'section'		=> 'social_links',
+		'settings'		=> 'facebook'
+	) ) );
+
+	$wp_customize->add_setting( 'twitter', array(
+		'default'		=> '',
+		'transport'		=> 'refresh'
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'twitter', array(
+		'label'			=> 'Twitter',
+		'section'		=> 'social_links',
+		'settings'		=> 'twitter'
+	) ) );
+	
+	$wp_customize->add_setting( 'youtube', array(
+		'default'		=> '',
+		'transport'		=> 'refresh'
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'youtube', array(
+		'label'			=> 'YouTube',
+		'section'		=> 'social_links',
+		'settings'		=> 'youtube'
+	) ) );
+
 }
 add_action( 'customize_register', 'mediatheme_customize_register' );
 
