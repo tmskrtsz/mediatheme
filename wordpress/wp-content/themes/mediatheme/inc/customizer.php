@@ -65,7 +65,23 @@ function mediatheme_customize_register( $wp_customize ) {
 		'section'		=> 'social_links',
 		'settings'		=> 'youtube'
 	) ) );
+	
+	$wp_customize->add_section( 'particles', array(
+		'title'			=> 'Particle Settings',
+		'description'	=> '',
+		'priority'		=> '20'
+	) );
 
+	$wp_customize->add_setting( 'particle_num', array(
+		'default'		=> '15',
+		'transport'		=> 'refresh'
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'facebook', array(
+		'label'			=> 'Particle Amount',
+		'section'		=> 'particles',
+		'settings'		=> 'particle_num'
+	) ) );
 }
 add_action( 'customize_register', 'mediatheme_customize_register' );
 

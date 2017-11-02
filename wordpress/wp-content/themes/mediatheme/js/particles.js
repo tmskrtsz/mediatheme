@@ -1,7 +1,6 @@
 (() => {
 	const canvas = document.querySelector('#particles');
 	const ctx = canvas.getContext('2d');
-	const particleAmount = 12;
 	const particleSize = [7, 5, 3];
 	const colors = ['#BCCF04', '#EA499C', '#4FC6E0', '#F3943E'];
 	const pixelRatio = window.devicePixelRatio;
