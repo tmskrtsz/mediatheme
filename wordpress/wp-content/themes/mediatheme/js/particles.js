@@ -61,7 +61,10 @@
 
 	// Make sure that the canvas takes into account the retina displays and adjusts
 	// the sizing accordingly. Otherwise it looks blurry
-	if (pixelRatio > 1) {
+	if (!pixelRatio > 1) {
+		canvas.width = currentWidth;
+		canvas.height = currentHeight;
+	} else {
 		canvas.width = currentWidth * pixelRatio;
 		canvas.height = currentHeight * pixelRatio;
 		ctx.scale(pixelRatio, pixelRatio);

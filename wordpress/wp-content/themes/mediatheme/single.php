@@ -12,12 +12,12 @@ get_header(); ?>
 		<article id="js-article" class="post-single container-740">
 			<?php
 			while ( have_posts() ) : the_post(); ?>
-			<div class="content-title text-center">
+			<div class="content-title">
 				<span class="post-date">
 					<?php echo get_the_date( 'l F j, Y' ); ?>
 				</span>
 				<?php 
-					the_title( '<h1 class="gallery-title">', '</h1>' );
+					the_title( '<h1>', '</h1>' );
 					the_excerpt();
 				?>
 			</div>
