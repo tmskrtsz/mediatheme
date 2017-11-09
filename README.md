@@ -5,7 +5,7 @@ TAMK's art and media blogs are moving from Blogger to WordPress. Therefore, we a
 ## Requirements 
 
 * This project uses [Vagrant](https://www.vagrantup.com) for a consistent development environment. Follow the instructions in the docs to get started with it.
-* To make things even easier, [VCCW](http://www.vccw.co) is a tool that does all the heavy lifting.
+* To make things even easier, [VCCW](http://www.vccw.cc) is a tool that does all the heavy lifting.
 * Webpack and Node.js for managing static assets and transpiling (Babel, minification, SCSS, etc.).
 
 ## VM Configuration
