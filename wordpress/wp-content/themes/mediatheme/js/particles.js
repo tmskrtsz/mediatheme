@@ -1,4 +1,4 @@
-(() => {
+const init = () => {
 	const canvas = document.querySelector('#particles');
 	const ctx = canvas.getContext('2d');
 	const particleSize = [7, 5, 3];
@@ -95,4 +95,8 @@
 	}
 
 	animate();
-})();
+};
+
+if (document.querySelector('#particles')) {
+	init();
+}
