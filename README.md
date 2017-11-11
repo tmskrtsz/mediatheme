@@ -10,6 +10,7 @@ TAMK's art and media blogs are moving from Blogger to WordPress. Therefore, we a
 - [ ] Social media links on the post page.
 - [ ] Author description on the post page.
 - [ ] Like feature on the post page.
+- [ ] Design footer.
 
 ## Requirements 
 
