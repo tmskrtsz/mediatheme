@@ -2,6 +2,15 @@
 
 TAMK's art and media blogs are moving from Blogger to WordPress. Therefore, we are doing a makeover in order to improve the overall quality of the websites.
 
+## To Do:
+- [ ] Link styles.
+- [ ] Category list on index.
+- [ ] Information sections on front page that can be edited through the admin panel.
+- [ ] Post type icons in the blog post gallery.
+- [ ] Social media links on the post page.
+- [ ] Author description on the post page.
+- [ ] Like feature on the post page.
+
 ## Requirements 
 
 * This project uses [Vagrant](https://www.vagrantup.com) for a consistent development environment. Follow the instructions in the docs to get started with it.
