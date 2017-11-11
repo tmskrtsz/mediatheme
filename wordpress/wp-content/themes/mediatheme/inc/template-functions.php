@@ -35,9 +35,16 @@ function add_categories( $count ) {
 	$categories = get_the_category();
 
 	if ( !empty($categories) ) {
-		for ($i = 0; $i < $count; $i++) {
-			echo sprintf( '<a class="pill pill-pink gallery-category-link" href="%s">%s</a>', esc_url( get_category_link( $categories[$i] ) ), $categories[$i]->name);
-		}
+		foreach ($categories as $key=>$category) {
+			if ($key > ($count - 1)) {
+				break;
+			} else {
+				echo sprintf(
+					'<a class="pill pill-pink gallery-category-link" href="%s">%s</a>', 
+					esc_url( get_category_link( $category->term_id ) ), $category->name
+				);
+			}
+		}	
 	}
 }
 add_action( 'get_categories', 'add_categories' );
