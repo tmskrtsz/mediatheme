@@ -4,7 +4,7 @@ TAMK's art and media blogs are moving from Blogger to WordPress. Therefore, we a
 
 ## To Do:
 - [x] Link styles.
-- [ ] Category list on index.
+- [x] Category list on index.
 - [ ] Information sections on front page that can be edited through the admin panel.
 - [ ] Post type icons in the blog post gallery.
 - [ ] Social media links on the post page.
