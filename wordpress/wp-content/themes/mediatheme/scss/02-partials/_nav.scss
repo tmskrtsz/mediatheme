@@ -1,7 +1,12 @@
 .site-header {
     background-color: $white;
     border-bottom: 1px solid $border-color;
-    max-height: 7rem;
+    max-height: $header-height;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 200;
 
     &-inner {
         display: flex;
@@ -15,10 +20,24 @@
     }
 }
 
+.header-hidden,
+.header-sticky {
+    position: fixed;
+    transition: all 0.2s ease-in-out;
+}
+
+.header-hidden {
+    transform: translate3d(0, -100%, 0);
+}
+
+.header-sticky {
+    transform: translate3d(0, 0, 0);
+}
+
 nav.main-navigation {
     ul {
         display: flex;
-        
+
         li {
             list-style: none;
         }
@@ -29,7 +48,7 @@ nav.main-navigation {
             color: $brand-primary;
         }
     }
-    
+
     li a {
         display: inline-block;
         padding: 1.4em;

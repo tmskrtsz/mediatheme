@@ -61,5 +61,32 @@
 				closeSidebar();
 			}
 		});
+
+		$(function () {
+			const scrollPositionTop = 0;
+			const headerBar = $('.site-header');
+			let lastScrollTop = scrollPositionTop;
+
+			$(window).scroll(() => {
+				const scrollPosition = $(this).scrollTop();
+
+				if (Math.abs(lastScrollTop - scrollPosition) <= 5) return;
+
+				if (scrollPosition > lastScrollTop) {
+					if (headerBar.hasClass('header-sticky')) {
+						headerBar.removeClass('header-sticky');
+						headerBar.addClass('header-hidden');
+					}
+				} else {
+					headerBar.addClass('header-sticky');
+				}
+
+				if (scrollPosition !== 0) {
+					headerBar.addClass('header-hidden');
+				}
+
+				lastScrollTop = scrollPosition;
+			});
+		});
 	});
 })(jQuery);
