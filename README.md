@@ -8,7 +8,7 @@ TAMK's art and media blogs are moving from Blogger to WordPress. Therefore, we a
 - [x] Make the header accessible on scroll up.
 - [ ] Information sections on front page that can be edited through the admin panel.
 - [ ] Post type icons in the blog post gallery.
-- [ ] Social media links on the post page.
+- [x] Social media links on the post page.
 - [ ] Author description on the post page.
 - [ ] Like feature on the post page.
 - [ ] Design footer.
