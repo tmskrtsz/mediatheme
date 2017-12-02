@@ -58,6 +58,7 @@ get_header(); ?>
 		</div>
 
 		<div class="scroll-header-title just-center">
+		<?php echo do_shortcode("[mashshare]"); ?>
 			<?php
 				if ( strlen($post->post_title) > 35 ) {
 					echo substr(the_title('<h5>', '</h5>', FALSE), 0, 35) . '...';
@@ -65,7 +66,6 @@ get_header(); ?>
 					the_title('<h5>', '</h5>');
 				}
 
-				echo do_shortcode("[mashshare]");
 			?>
 		</div>
 		<div class="post-navigation just-end">
