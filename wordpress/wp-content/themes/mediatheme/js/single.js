@@ -34,6 +34,7 @@
 					.height(this.scrollHeight);
 			}
 		};
+
 		// Enlarge the textarea if the content eats up more space
 		commentTextArea.on('change keyup keydown paste cut', textAreaExpand);
 
@@ -50,11 +51,20 @@
 			}
 		});
 
+		// Initialize share buttons
+		const shareButtons = $('.mashsb-container');
+
+		if ($(window).scrollTop() === 0) {
+			shareButtons.hide();
+		}
+
 		$(window).on('scroll', () => {
 			const winScroll = $(window).scrollTop();
 			const winHeight = $(window).height();
 			const article = $('#js-article');
 			const articleHeight = article.outerHeight(true);
+			const articleTitle = $('.scroll-header-title > h5');
+			const titleTransition = 200;
 
 			if (winScroll >= article.offset().top) {
 				$('#js-progress-header').addClass('active');
@@ -66,14 +76,31 @@
 				let currentHeight = (winScroll / (articleHeight - winHeight)) * 100;
 
 				if (currentHeight >= 100) {
-					currentHeight = `${100}%`;
+					currentHeight = 100;
 					return currentHeight;
 				}
 
-				return `${currentHeight}%`;
+				return currentHeight;
 			};
 
-			$('#js-progress-bar').css('width', totalWidth());
+			$('#js-progress-bar').css('width', `${totalWidth()}%`);
+
+			if (totalWidth() < 100) {
+				// Hide share buttons
+				shareButtons.fadeOut({
+					duration: titleTransition,
+					complete: () => {
+						articleTitle.fadeIn();
+					},
+				});
+			} else {
+				articleTitle.fadeOut({
+					duration: titleTransition,
+					complete: () => {
+						shareButtons.fadeIn();
+					},
+				});
+			}
 		});
 	});
 })(jQuery);
