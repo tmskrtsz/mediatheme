@@ -16,7 +16,7 @@ get_header(); ?>
 				<span class="post-date">
 					<?php echo get_the_date( 'l F j, Y' ); ?>
 				</span>
-				<?php 
+				<?php
 					the_title( '<h1>', '</h1>' );
 					the_excerpt();
 				?>
@@ -56,14 +56,16 @@ get_header(); ?>
 				</a>
 			<?php endif; ?>
 		</div>
-		 
+
 		<div class="scroll-header-title just-center">
-			<?php 
+			<?php
 				if ( strlen($post->post_title) > 35 ) {
-					echo substr(the_title('<h5>', '</h5>', FALSE), 0, 35) . '...'; 
+					echo substr(the_title('<h5>', '</h5>', FALSE), 0, 35) . '...';
 				} else {
 					the_title('<h5>', '</h5>');
 				}
+
+				echo do_shortcode("[mashshare]");
 			?>
 		</div>
 		<div class="post-navigation just-end">
