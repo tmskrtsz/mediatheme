@@ -10,6 +10,9 @@ $icons: (
     'arrow-right',
     'facebook',
     'twitter',
+    'video',
+    'message-circle',
+    'image',
 );
 
 $assets: (
@@ -30,7 +33,7 @@ $assets: (
 
 .icon {
     @extend %pressed;
-    
+
     &-default {
         height: 24px;
     }
