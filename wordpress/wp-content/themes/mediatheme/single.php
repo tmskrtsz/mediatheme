@@ -25,6 +25,17 @@ get_header(); ?>
 
 				the_content();
 			?>
+			<div class="post-author-bio">
+				<div class="post-author-avatar">
+					<?php echo get_avatar( get_the_author_meta( 'ID' ), 64 ); ?>
+				</div>
+				<div class="post-author-desc">
+					<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ?>">
+						<?php echo get_the_author(); ?>
+					</a>
+					<p><?php echo get_the_author_meta( 'description' ); ?></p>
+				</div>
+			</div>
 		</article>
 	</div>
 	<div class="container-740">

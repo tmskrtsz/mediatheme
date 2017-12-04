@@ -9,7 +9,7 @@ TAMK's art and media blogs are moving from Blogger to WordPress. Therefore, we a
 - [ ] Information sections on front page that can be edited through the admin panel.
 - [x] Post type icons in the blog post gallery.
 - [x] Social media links on the post page.
-- [ ] Author description on the post page.
+- [x] Author description on the post page.
 - [ ] Like feature on the post page.
 - [ ] Design footer.
 
