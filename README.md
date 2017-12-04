@@ -6,12 +6,17 @@ TAMK's art and media blogs are moving from Blogger to WordPress. Therefore, we a
 - [x] Link styles.
 - [x] Category list on index.
 - [x] Make the header accessible on scroll up.
-- [ ] Information sections on front page that can be edited through the admin panel.
+- [ ] Information sections on front page that can be edited through the admin panel. (ACF)
+- [ ] Add section for important links and announcements. (ACF)
 - [x] Post type icons in the blog post gallery.
 - [x] Social media links on the post page.
 - [x] Author description on the post page.
 - [ ] Like feature on the post page.
 - [ ] Design footer.
+- [ ] Responsive Design.
+- [ ] Make the logo replaceable from the dashboard.
+- [ ] Sidebar scrolling and body overflow.
+- [ ] Add newsletter signup form.
 
 ## Requirements
 
