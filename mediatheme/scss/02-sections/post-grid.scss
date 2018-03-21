@@ -1,0 +1,65 @@
+article.post-grid {
+    a.post-inner {
+        display: block;
+        padding: 0.8em;
+
+        &:hover {
+            .post-thumbnail {
+                transform: scale(1.2);
+            }
+
+            .post-title {
+                color: $brand-primary;
+            }
+
+            .post-meta {
+                box-shadow: $shadow-sm;
+            }
+        }
+    }
+
+    .post-thumbnail-wrapper {
+        overflow: hidden;
+        border-radius: 2px;
+    }
+
+    .post-thumbnail {
+        background-color: $white;
+        width: 100%;
+        height: 420px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: transform 0.25s ease;
+        z-index: -1;
+    }
+
+    .post-meta {
+        margin: 0 2em;
+        background-color: $white;
+        padding: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+        margin-top: -3em;
+        box-shadow: $shadow-md;
+        transition: $transition;
+        border-radius: 2px;
+
+        .post-title {
+            color: $text-color;
+            line-height: 1.2;
+            padding: 0.3em 0;
+            transition: $transition;
+        }
+
+        time {
+            color: rgba($text-muted, 0.4);
+        }
+    }
+
+    .post-byline,
+    time {
+        color: $text-muted;
+        font-size: 1.3rem;
+    }
+}

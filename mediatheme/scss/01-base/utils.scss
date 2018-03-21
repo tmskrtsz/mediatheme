@@ -1,0 +1,91 @@
+@for $i from 1 through 5 {
+    .p#{$i} {
+        padding-top: #{$i}em;
+        padding-bottom: #{$i}em;
+    }
+
+    .m#{$i} {
+        margin-top: #{$i}em;
+        margin-bottom: #{$i}em;
+    }
+}
+
+.p-clear-top {
+    padding-top: 0;
+}
+
+.p-clear-bottom {
+    padding-bottom: 0;
+}
+
+.m-clear-top {
+    margin-top: 0;
+}
+
+.m-clear-bottom {
+    margin-bottom: 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.is-centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+%link-style {
+    color: $brand-primary;
+}
+
+%link-hover {
+    position: relative;
+    padding: 0.2em 0;
+    transition: $transition;
+
+    &::after {
+        content: '';
+        border-bottom: 2px solid rgba($brand-primary, 0.8);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.15s ease-in-out;
+    }
+
+    &:hover {
+        color: $brand-primary;
+
+        &::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+    }
+}
+
+.is-flex {
+    display: flex;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.dir-column {
+    flex-direction: column;
+}

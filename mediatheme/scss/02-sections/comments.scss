@@ -1,0 +1,73 @@
+ol.commentlist,
+ul.children {
+    list-style-type: none;
+}
+
+ul.children li {
+    margin-left: 3.5em;
+}
+
+.comment-body {
+    background-color: $white;
+    margin: 1.2em 0;
+    padding: 1.2em;
+    border-radius: 6px;
+    box-shadow: $shadow-xs;
+
+    p {
+        padding: 0.5em 0;
+
+        &::before {
+            content: '';
+            clear: both;
+            display: table;
+        }
+    }
+}
+
+.comment-author {
+    float: left;
+    display: flex;
+    align-items: center;
+
+    cite {
+        font-style: normal;
+    }
+
+    span.says {
+        display: none;
+    }
+
+    .avatar {
+        border-radius: 20px;
+        box-shadow: $shadow-sm;
+        margin-right: 0.5em;
+    }
+}
+
+.comment-meta {
+    float: right;
+
+    a {
+        color: rgba($text-color, 0.5);
+
+        &:hover {
+            color: rgba($text-color, 0.8);
+        }
+    }
+}
+
+.comment-reply-link {
+    @extend %link-hover;
+}
+
+.comment-reply-textarea {
+    width: 100%;
+}
+
+form {
+    label {
+        display: block;
+        visibility: hidden;
+    }
+}

@@ -1,0 +1,113 @@
+.hero {
+    position: relative;
+    position: relative;
+    z-index: 100;
+    height: calc(100vh - #{$header-height-lg});
+    align-items: center;
+
+    canvas {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: -1;
+    }
+}
+
+.hero-titles {
+    position: relative;
+    margin-right: 3em;
+}
+
+.hero-featured {
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 30px -4px rgba($brand-dark, 0.4);
+    transition: $transition;
+
+    &:hover {
+        box-shadow: 0 2px 20px rgba($brand-dark, 0.4);
+
+        .hero-featured-meta h2 {
+            opacity: 0.7;
+        }
+    }
+}
+
+.hero-featured-image {
+    position: relative;
+    transition: $transition;
+
+    &.post-thumbnail {
+        height: 720px;
+        z-index: 200;
+        background-size: cover;
+        background-position: center;
+        border-radius: 2px;
+    }
+
+    &.no-image {
+        width: 100%;
+        height: 680px;
+        background-color: rgba($brand-primary, 0.05);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        small {
+            color: $brand-primary;
+        }
+    }
+}
+
+.hero-featured-meta {
+    width: 100%;
+    background-image: linear-gradient(180deg, rgba($brand-dark, 0.03), rgba($brand-dark, 0.9));
+    padding: 2em;
+    box-shadow: 0 10px 30px rgba(#000, 0.12);
+    z-index: 100;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: $white;
+    border-radius: 0 0 2px 2px;
+
+    .post-byline {
+        span {
+            padding-left: 12px;
+            border-left: 3px solid #75b3ff;
+        }
+    }
+
+    h2 {
+        transition: $transition;
+    }
+
+    .post-byline,
+    time {
+        color: rgba($white, 0.8);
+    }
+}
+
+.hero-social-media {
+    a {
+        display: inline-flex;
+        margin-right: 1em;
+        background-color: $white;
+        box-shadow: 0 2px 8px rgba($brand-dark, 0.12);
+        width: 42px;
+        height: 42px;
+        box-sizing: border-box;
+        border-radius: 50px;
+        align-items: center;
+        justify-content: center;
+        transition: $transition;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba($brand-dark, 0.12);
+        }
+    }
+}

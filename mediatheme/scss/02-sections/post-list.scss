@@ -1,0 +1,106 @@
+article.post-list {
+    .post-inner {
+        border: 1px solid $border-color;
+        border-radius: 6px;
+        box-shadow: $shadow-xs;
+        transition: $transition;
+
+        &:hover {
+            box-shadow: $shadow-md;
+        }
+    }
+
+    .post-thumbnail-wrapper {
+        overflow: hidden;
+        padding: 0;
+    }
+
+    .post-thumbnail {
+        float: left;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 0 4px 4px 0;
+        position: relative;
+    }
+
+    .post-cat {
+        position: absolute;
+        top: 0.5em;
+        right: 0.5em;
+
+        a {
+            background-color: $brand-green;
+            border-radius: 40px;
+            color: $white;
+            font-size: 1.3rem;
+            padding: 0.3em 0.6em;
+            transition: $transition;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    .post-byline {
+        margin-top: auto;
+
+        a {
+            margin-left: 0.5em;
+            margin-right: auto;
+            @extend %link-hover;
+            padding: 0;
+        }
+    }
+
+    .post-avatar img {
+        border-radius: 40px;
+        box-shadow: 0 4px 12px rgba($brand-dark, 0.2);
+    }
+
+    .post-meta {
+        margin-right: 3em;
+        flex-direction: column;
+        padding: 1.5em;
+        position: relative;
+
+        .post-featured {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            background-color: $brand-secondary;
+            padding: 0 0.8em;
+            border-radius: 20px;
+            color: $white;
+            font-size: 1.3rem;
+            box-shadow: 0 0 0 6px $white;
+        }
+
+        a.post-title {
+            &:hover {
+                color: $brand-primary;
+            }
+        }
+
+        p {
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+
+        time {
+            color: rgba($text-muted, 0.4);
+        }
+
+        a.btn-primary {
+            align-self: flex-start;
+        }
+    }
+
+    a.post-title {
+        color: $brand-dark;
+        line-height: 1.2;
+    }
+}
+
