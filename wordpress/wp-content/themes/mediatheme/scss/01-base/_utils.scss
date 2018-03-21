@@ -1,5 +1,5 @@
 // Container gallery flex options
-@mixin flex-gallery($columns:null, $margin-top:null, $margin-left:null) {
+@mixin flex-grid($columns:null, $margin-top:null, $margin-left:null) {
     display: flex;
     flex-wrap: wrap;
     @if $margin-top and $margin-left {
@@ -112,4 +112,25 @@
     justify-content: flex-end;
 }
 
+.align-center {
+    align-items: center;
+}
 
+//-- Padding utility
+
+@for $i from 1 through 7 {
+    .p-#{$i} {
+        padding: #{$i}em 0;
+    }
+}
+
+//-- Common font sizing
+.f-15 {
+    font-size: 1.5rem;
+    line-height: $line-height-md;
+}
+
+.f-17 {
+    font-size: 1.7rem;
+    line-height: $line-height-lg;
+}

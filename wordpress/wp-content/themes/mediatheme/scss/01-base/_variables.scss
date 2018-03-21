@@ -10,6 +10,12 @@ $border-color: darken($bg-color, 4%);
 $text-color: rgba($brand-dark, 0.7);
 $text-muted: rgba($brand-dark, 0.5);
 
+// TAMK brand colors
+$brand-green: #BCCF04;
+$brand-pink: $brand-accent;
+$brand-blue: #4FC6E0;
+$brand-orange: #F3943E;
+
 // Social media colors
 $facebook: #3b5998;
 $twitter: #1da1f2;
@@ -27,7 +33,7 @@ $letter-spacing-sm: 0.3px;
 $letter-spacing-md: 0.6px;
 $letter-spacing-lg: 0.9px;
 
-// Sizing 
+// Sizing
 $container-1280: 128rem;
 $container-740: 74rem;
 $container-640: 64rem;

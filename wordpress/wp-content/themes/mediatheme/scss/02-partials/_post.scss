@@ -28,9 +28,7 @@
     }
 
     img {
-        max-width: 110%;
-        position: relative;
-        left: -6%;
+        max-width: 100%;
     }
 
     figure {
@@ -40,7 +38,6 @@
     figcaption {
         text-align: center;
         position: relative;
-        left: -6%;
         margin: 0.5em 0;
     }
 
@@ -160,7 +157,7 @@
 }
 
 .post-related-container {
-    @include flex-gallery(3, 20px, 20px);
+    @include flex-grid(3, 20px, 20px);
 }
 
 // Related posts outer container
@@ -185,7 +182,7 @@
     transform: translate3d(0, 100%, 0);
     transition: all 0.3s $cubic-bezier;
     overflow: hidden;
-    z-index: 1000;
+    z-index: 300;
 
     &::after {
         content: '';

@@ -2,9 +2,10 @@
     "extends": "airbnb-base",
     "rules": {
         "indent": [2, "tab"],
-        "no-tabs": 0
+        "no-tabs": 0,
+        "linebreak-style": 0
     },
-    "env": { 
+    "env": {
         "browser": true,
         "es6": true,
         "jquery": true

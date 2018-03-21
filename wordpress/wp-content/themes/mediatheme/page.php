@@ -12,7 +12,7 @@ get_header(); ?>
 		<article id="js-article" class="post-single container-740">
 			<?php
 			while ( have_posts() ) : the_post(); ?>
-			<div class="content-title">
+			<div class="content-title p-3">
 				<span class="post-date">
 					<?php echo get_the_date( 'l F j, Y' ); ?>
 				</span>

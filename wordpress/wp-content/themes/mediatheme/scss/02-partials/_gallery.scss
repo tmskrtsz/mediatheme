@@ -26,8 +26,8 @@
     }
 }
 
-.gallery-container-3 {
-    @include flex-gallery(3, 40px, 40px);
+.grid-container-3 {
+    @include flex-grid(3, 40px, 40px);
 }
 
 .gallery-thumbnail {
@@ -196,8 +196,8 @@
 }
 
 // Main categories on homepage
-.gallery-container-4 {
-    @include flex-gallery(4, 25px, 25px);
+.grid-container-4 {
+    @include flex-grid(4, 25px, 25px);
 }
 
 .cat-box {
