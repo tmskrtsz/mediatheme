@@ -17,7 +17,7 @@
                     </a>
                 </div>
                 <div class="hero-cta">
-                    <a class="btn btn-primary btn-icon" href="#">Learn More <i class="fa fa-angle-right"></i></a>
+                    <a class="btn btn-primary btn-icon" href="#learn-more">Learn More <i class="fa fa-angle-right"></i></a>
                 </div>
             </div>
         </div>

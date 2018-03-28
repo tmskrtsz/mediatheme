@@ -29,3 +29,14 @@ document.addEventListener('scroll', () => {
 		headerEl.classList.remove('is-scrolling');
 	}
 });
+
+// Scroll animation on clicking Learn More button
+//
+document.querySelector("a[href='#learn-more']").addEventListener('click', (e) => {
+	e.preventDefault();
+	const scrollTopValue = jQuery('#learn-more').offset().top - 40;
+
+	jQuery('html, body').animate({
+		scrollTop: scrollTopValue,
+	}, 'slow');
+});

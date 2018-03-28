@@ -30,12 +30,12 @@ get_header(); ?>
                     ?>
 				</div>
 				<div class="m3">
-					<a href="#" class="btn btn-primary btn-icon">Browse all posts <i class="fa fa-angle-right"></i></a>
+					<a href="<?php echo esc_url( get_page_link(2) ); ?>" class="btn btn-primary btn-icon">Browse all posts <i class="fa fa-angle-right"></i></a>
 				</div>
 			</div>
 		</section>
 
-		<section class="section about bg-gray">
+		<section id="learn-more" class="section about bg-gray">
 			<div class="container w-1280 is-centered">
 				<div class="section-heading text-center m5 m-clear-top">
 					<h2>Our Study Paths</h2>

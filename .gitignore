@@ -9,5 +9,5 @@ vendor
 node_modules/
 .vscode/
 media/
-plugins_cp/
 plugins/
+mediatheme/dist
