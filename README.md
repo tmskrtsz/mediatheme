@@ -1,4 +1,5 @@
 # TAMK Media and Art WordPress Theme
+[![Build Status](https://travis-ci.org/tmskrtsz/mediatheme.svg?branch=master)](https://travis-ci.org/tmskrtsz/mediatheme)
 
 TAMK's art and media blogs are moving from Blogger to WordPress. Therefore, we are doing a makeover in order to improve the overall quality of the websites.
 
