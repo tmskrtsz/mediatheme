@@ -23,6 +23,14 @@
 							</time>
 						</div>
 					</div>
+					<div class="share-buttons article-share w-720 is-centered">
+						<a href="<?php esc_url(the_permalink()); ?>?share=facebook" class="facebook" target="_blank" rel="noopener noreferrer">
+                        	<i class="fab fa-facebook-f fa-lg" style="color:#3b5998"></i>
+						</a>
+						<a href="<?php esc_url(the_permalink()); ?>?share=twitter" class="twitter" target="_blank" rel="noopener noreferrer">
+							<i class="fab fa-twitter fa-lg" style="color:#1da1f2"></i>
+						</a>
+					</div>
 					<h1><?php the_title(); ?></h1>
 					<p><?php the_excerpt(); ?></p>
 				</div>

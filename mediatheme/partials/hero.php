@@ -5,7 +5,7 @@
             <div class="hero-titles m5">
                 <h1><?php bloginfo( 'name' ); ?></h1>
                 <p><?php bloginfo( 'description' ); ?></p>
-                <div class="hero-social-media m3">
+                <div class="share-buttons hero-social-media m3">
                     <a href="<?php echo get_theme_mod( 'facebook', '#' ); ?>" class="facebook" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-facebook-f fa-lg" style="color:#3b5998"></i>
                     </a>

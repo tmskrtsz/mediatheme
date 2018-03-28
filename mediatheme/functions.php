@@ -153,4 +153,12 @@ function mediatheme_customize_register( $wp_customize ) {
     ) ) );
 }
 add_action( 'customize_register', 'mediatheme_customize_register' );
+
+function remove_jetpack_share() {
+    if ( is_singular( 'post' ) && function_exists( 'sharing_display' ) ) {
+        remove_filter( 'the_content', 'sharing_display', 19 );
+        remove_filter( 'the_excerpt', 'sharing_display', 19 );
+    }
+}
+add_action( 'loop_start', 'remove_jetpack_share' );
 ?>
