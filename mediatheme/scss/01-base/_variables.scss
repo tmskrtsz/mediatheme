@@ -1,0 +1,30 @@
+$brand-primary: #07f;
+$brand-secondary: #ec439d;
+$brand-green: #43c369;
+$brand-dark: #161d28;
+$brand-dark-light: #9ca8b7;
+$text-color: #000;
+$text-muted: rgba($text-color, 0.7);
+$white: #fff;
+$shadow-md: 0 12px 30px rgba($brand-dark, 0.12);
+$shadow-sm: 0 6px 20px rgba($brand-dark, 0.12);
+$shadow-xs: 0 4px 8px rgba($brand-dark, 0.07);
+$border-color: rgba($brand-dark, 0.15);
+
+$brand-facebook: #3b5998;
+$brand-twitter: #1da1f2;
+$brand-youtube: #f00;
+
+$heading-scale: 0.35;
+$base-font-size: 1.5rem;
+$base-font-family: 'Karla', sans-serif;
+$base-line-height: 1.867;
+
+$transition: all 0.15s ease-in-out;
+
+$header-height-lg: 60px;
+$article-outer-width: 880px;
+$article-paragraph-width: $article-outer-width - 160;
+$z-top: 1000;
+
+$screen-lg: 1280px;

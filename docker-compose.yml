@@ -1,0 +1,22 @@
+version: '3'
+services:
+  wordpress:
+    image: visiblevc/wordpress:0.17.0-php5.6
+    ports:
+      - 8080:80
+      - 443:443
+    volumes:
+      - ./media:/app/wp-content/uploads
+      - ./plugins:/var/www/html/wp-content/plugins
+      - ./mediatheme:/app/wp-content/themes/mediatheme
+    environment:
+      DB_NAME: wordpress
+      DB_PASS: root
+  db:
+    image: mysql:5.5.58
+    volumes:
+      - data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+volumes:
+  data:

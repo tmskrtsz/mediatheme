@@ -1,0 +1,118 @@
+a.menu-icon {
+    display: block;
+    width: 24px;
+    height: 19px;
+    position: relative;
+
+    span {
+        height: 2px;
+        background-color: $brand-dark;
+        display: block;
+        position: absolute;
+        transition: $transition;
+
+        &:nth-child(1) {
+            width: 65%;
+        }
+
+        &:nth-child(2) {
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &:nth-child(3) {
+            width: 65%;
+            bottom: 0;
+        }
+    }
+
+    &:hover {
+        span {
+            background-color: $brand-primary;
+            width: 100%;
+        }
+    }
+}
+
+aside.sidebar {
+    max-width: 380px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: $brand-dark;
+    padding: 2em;
+    border-right: 1px solid $border-color;
+    transform: translate3d(100%, 0, 0);
+    opacity: 0;
+    transition: $transition;
+    z-index: 1000;
+    overflow-y: auto;
+    will-change: transform;
+    box-shadow: -4px 0 30px rgba($brand-dark, 0.4);
+
+    &.active {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+
+    h3,
+    h4,
+    h5 {
+        color: rgba($white, 0.85);
+    }
+
+    .widget:not(:first-child) {
+        margin: 2em 0;
+    }
+
+    ul li {
+        list-style: none;
+    }
+
+    li {
+        margin: 1.2em 0;
+    }
+
+    a {
+        font-size: 1.7rem;
+        line-height: 1.5;
+        color: $brand-dark-light;
+        display: block;
+        transition: $transition;
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+    .post-date {
+        font-size: 1.4rem;
+        color: rgba($brand-dark-light, 0.5);
+    }
+}
+
+.sidebar-content {
+    form.searchform {
+        input[type='text'] {
+            width: 100%;
+            display: block;
+            border: 0;
+            border-bottom: 2px solid $brand-dark-light;
+            padding: 0.6em 0;
+            color: rgba($white, 0.8);
+            background-color: transparent;
+            transition: $transition;
+        }
+
+        input[type='text']:focus {
+            border-bottom-color: $brand-primary;
+        }
+
+        input[type='submit'] {
+            display: none;
+        }
+    }
+}

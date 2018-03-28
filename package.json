@@ -24,9 +24,11 @@
     "webpack": "^3.6.0"
   },
   "scripts": {
-    "watch": "webpack --progress --watch"
+    "watch": "webpack --env.dev --progress --watch",
+    "build": "webpack --env.production --progress"
   },
   "devDependencies": {
+    "bulma": "^0.6.2",
     "eslint": "^4.9.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-loader": "^1.9.0",

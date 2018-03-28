@@ -1,4 +1,4 @@
-const PATH = "wordpress/wp-content/themes/mediatheme";
+const PATH = 'mediatheme';
 
 const webpack           = require("webpack"),
       path              = require("path"),
@@ -6,7 +6,7 @@ const webpack           = require("webpack"),
       MinifyJs          = require("babel-minify-webpack-plugin"),
       StyleLint         = require('stylelint-webpack-plugin');
 
-module.exports = function(env) {
+module.exports = env => {
   return {
     entry: {
       'main': `./${PATH}/js/main.js`,
@@ -46,28 +46,28 @@ module.exports = function(env) {
           exclude: path.resolve(__dirname, "node_modules"),
           use: ExtractTextPlugin.extract({
             use: [
-              { 
-                loader: "css-loader", 
-                options: { 
-                  sourceMap: true, 
-                  minimize: true,
-                } 
+              {
+                loader: "css-loader",
+                options: {
+                  sourceMap: env.dev,
+                  minimize: env.production,
+                }
               },
               {
                 loader: "postcss-loader",
                 options: {
-                  sourceMap: true,
+                  sourceMap: env.dev,
                   plugins: [
                     require("postcss-flexbugs-fixes"),
                     require("autoprefixer"),
                   ]
                 }
               },
-              { 
-                loader: "sass-loader", 
-                options: { 
-                  sourceMap: true,
-                } 
+              {
+                loader: "sass-loader",
+                options: {
+                  sourceMap: env.dev,
+                }
               }
             ]
           })
@@ -112,7 +112,7 @@ module.exports = function(env) {
                 publicPath: './',
               }
             },
-          ] 
+          ]
         }
       ]
     },
@@ -122,11 +122,11 @@ module.exports = function(env) {
         allChunks: true,
       }),
       new MinifyJs({}, {
-        sourceMap: true,
+        sourceMap: env.production,
       }),
       new StyleLint({
         configFile: '.stylelintrc',
-        content: `${PATH}/scss`,
+        content: `./${PATH}/scss`,
         syntax: 'scss',
       }),
     ]
