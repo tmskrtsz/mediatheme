@@ -1,5 +1,6 @@
 # TAMK Media and Art WordPress Theme
 [![Build Status](https://travis-ci.org/tmskrtsz/mediatheme.svg?branch=master)](https://travis-ci.org/tmskrtsz/mediatheme)
+[![dependencies Status](https://david-dm.org/tmskrtsz/mediatheme.svg)](https://david-dm.org/boennemann/badges)
 
 TAMK's art and media blogs are moving from Blogger to WordPress. Therefore, we are doing a makeover in order to improve the overall quality of the websites.
 
@@ -21,7 +22,7 @@ TAMK's art and media blogs are moving from Blogger to WordPress. Therefore, we a
 
 ## Requirements
 
-* This project is using [Docker](http://docker.com) container.
+* This project is using [Docker](https://docker.com) container.
 * Webpack and Node.js for managing static assets and transpiling (Babel, minification, SCSS, etc.).
 
 ## VM Configuration
