@@ -210,3 +210,94 @@ article.main {
         color: $brand-twitter !important;
     }
 }
+
+.article-bio {
+    &::before {
+        content: '';
+        display: block;
+        width: 10%;
+        height: 1px;
+        background-color: $border-color;
+        margin: 2em auto;
+    }
+}
+
+.article-author-bio {
+    padding-top: 0.5em;
+
+    a {
+        font-size: 1.9rem;
+        font-weight: 700;
+        @extend %link-hover;
+    }
+
+    p.article-desc {
+        padding: 0;
+        color: $text-muted;
+    }
+}
+
+.article-navigation {
+    justify-content: space-between;
+
+    a {
+        border: 1px solid $border-color;
+        border-radius: 4px;
+        padding: 0.5em 1.4em;
+        margin: 0.5em;
+        box-shadow: $shadow-xs;
+        transition: $transition;
+        position: relative;
+
+        &:hover {
+            background-color: $brand-primary;
+
+            h5,
+            span {
+                color: $white;
+            }
+
+            .nav-icon {
+                opacity: 1;
+            }
+
+            .fa-angle-left {
+                transform: translate(-40px, -50%);
+            }
+
+            .fa-angle-right {
+                transform: translate(40px, -50%);
+            }
+        }
+
+        h5,
+        span {
+            transition: $transition;
+        }
+
+        h5 {
+            color: $text-muted;
+        }
+
+        span {
+            color: rgba($text-muted, 0.5);
+        }
+
+        .nav-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: $transition;
+            z-index: -1;
+        }
+
+        .fa-angle-left {
+            left: 0;
+        }
+
+        .fa-angle-right {
+            right: 0;
+        }
+    }
+}

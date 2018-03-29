@@ -32,11 +32,16 @@ document.addEventListener('scroll', () => {
 
 // Scroll animation on clicking Learn More button
 //
-document.querySelector("a[href='#learn-more']").addEventListener('click', (e) => {
-	e.preventDefault();
-	const scrollTopValue = jQuery('#learn-more').offset().top - 40;
+const anchorButton = document.querySelector("a[href='#learn-more']");
 
-	jQuery('html, body').animate({
-		scrollTop: scrollTopValue,
-	}, 'slow');
-});
+if (document.body.contains(anchorButton)) {
+	document.querySelector("a[href='#learn-more']").addEventListener('click', (e) => {
+		e.preventDefault();
+		const scrollTopValue = jQuery('#learn-more').offset().top - 40;
+
+		jQuery('html, body').animate({
+			scrollTop: scrollTopValue,
+		}, 'slow');
+	});
+}
+

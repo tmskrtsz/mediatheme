@@ -5,6 +5,7 @@ function theme_scripts() {
     wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Karla:400,700' );
     wp_enqueue_script( 'main', get_template_directory_uri() . '/dist/main.bundle.js', array(), '1.0.0', true );
     wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/releases/v5.0.6/js/all.js', array(), '1.0.0', false );
+
     if (is_single() && !is_home()) {
         wp_enqueue_script( 'single', get_template_directory_uri() . '/dist/single.bundle.js', array(), '0.0.1', true );
     }
