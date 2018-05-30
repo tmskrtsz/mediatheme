@@ -71,3 +71,22 @@ form {
         visibility: hidden;
     }
 }
+
+.comment-area {
+    @media (max-width: $screen-md) {
+        padding: 0 2em;
+
+        .comment-details {
+            display: block;
+
+            .input-group {
+                width: 100%;
+                padding: 0.5em 0;
+            }
+
+            label {
+                display: none;
+            }
+        }
+    }
+}

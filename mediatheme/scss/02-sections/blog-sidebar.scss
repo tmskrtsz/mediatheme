@@ -44,6 +44,11 @@ ul.cat-list {
             font-weight: bold;
             text-shadow: 0 2px 4px rgba($brand-dark, 0.5);
         }
+
+        @media (max-width: $screen-md) {
+            margin: 1em;
+            padding: 3em 0;
+        }
     }
 
     .cat-count {
@@ -59,5 +64,15 @@ ul.cat-list {
         height: 24px;
         border: 2px solid $white;
         box-sizing: content-box;
+    }
+
+    @media (max-width: $screen-md) {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: $screen-md) {
+    aside {
+        text-align: center;
     }
 }

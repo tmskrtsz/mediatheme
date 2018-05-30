@@ -17,6 +17,11 @@
 .hero-titles {
     position: relative;
     margin-right: 3em;
+
+    @media(max-width: $screen-md) {
+        text-align: center;
+        margin-right: 0;
+    }
 }
 
 .hero-featured {
@@ -45,6 +50,10 @@
         background-size: cover;
         background-position: center;
         border-radius: 2px;
+
+        @media (max-width: $screen-md) {
+            height: 420px;
+        }
     }
 
     &.no-image {

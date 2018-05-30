@@ -16,6 +16,14 @@ header {
 
 .header-inner {
     width: $screen-lg;
+
+    @media (max-width: $screen-md) {
+        display: flex;
+
+        .site-logo {
+            flex-grow: 0;
+        }
+    }
 }
 
 nav.main {
@@ -47,6 +55,10 @@ nav.main {
                 transform: translate(-50%, -50%);
             }
         }
+    }
+
+    @media (max-width: $screen-md) {
+        display: none;
     }
 }
 

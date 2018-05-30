@@ -92,6 +92,12 @@ aside.sidebar {
         font-size: 1.4rem;
         color: rgba($brand-dark-light, 0.5);
     }
+
+    nav.nav-responsive {
+        @media (min-width: $screen-md) {
+            display: none;
+        }
+    }
 }
 
 .sidebar-content {

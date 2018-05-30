@@ -40,7 +40,8 @@ article.post-grid {
         padding: 1em;
         margin-left: 1em;
         margin-right: 1em;
-        margin-top: -3em;
+        position: relative;
+        top: -3em;
         box-shadow: $shadow-md;
         transition: $transition;
         border-radius: 2px;

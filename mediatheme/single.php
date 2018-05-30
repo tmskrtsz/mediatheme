@@ -81,10 +81,9 @@
 						<?php endif; ?>
 					</div>
 				</article>
-
 		</div>
 		<div class="bg-gray p2">
-			<div class="container w-720 is-centered">
+			<div class="comment-area container w-720 is-centered">
 				<?php comments_template(); ?>
 			</div>
 		</div>

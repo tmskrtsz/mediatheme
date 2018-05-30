@@ -13,6 +13,10 @@
             font-size: 2rem;
             color: rgba($text-color, 0.6);
         }
+
+        @media (max-width: $screen-md) {
+            padding: 2em;
+        }
     }
 
     ul.post-categories {
@@ -70,6 +74,12 @@ article.main {
         a {
             @extend %link-hover;
         }
+
+        @media (max-width: $screen-md) {
+            img {
+                max-width: 100%;
+            }
+        }
     }
 
     blockquote {
@@ -114,6 +124,12 @@ article.main {
 
     .wp-caption {
         margin-top: 1em;
+
+        @media (max-width: $screen-md) {
+            img {
+                max-width: 100%;
+            }
+        }
     }
 
     .wp-caption.aligncenter {
@@ -129,6 +145,14 @@ article.main {
         font-size: 1.4rem;
         color: rgba($text-color, 0.8);
     }
+
+    @media (max-width: $screen-md) {
+        padding: 0 2em;
+
+        iframe {
+            max-width: 100% !important;
+        }
+    }
 }
 
 .article-banner-wrapper {
@@ -143,6 +167,10 @@ article.main {
     background-position: center;
     height: 480px;
     width: 100%;
+
+    @media (max-width: $screen-md) {
+        height: 420px;
+    }
 }
 
 .author-avatar {
